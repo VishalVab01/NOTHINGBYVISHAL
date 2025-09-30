@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ScratchCardVideo from "../components/ScratchCardVideo";
-import ScrollZoomImages from "../components/ScrollZoomImages";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       {/* Navigation Header */}
@@ -23,15 +25,16 @@ const HomePage = () => {
 
         {/* Right - New Launch Button */}
         <div className="nothing-nav-right">
-          <button className="nothing-launch-btn">
+          <button 
+            className="nothing-launch-btn"
+            onClick={() => navigate('/second')}
+          >
             NEW LAUNCH
           </button>
         </div>
       </header>
 
-      {/* Scroll Zoom Images Background */}
-      <ScrollZoomImages />
-
+      
       {/* Scratch Card Video Background */}
       <ScratchCardVideo />
 

@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import SecondPage from "./pages/SecondPage";
 import useSmoothScroll from "./hooks/useSmoothScroll";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/second" element={<SecondPage />} />
         </Routes>
       </BrowserRouter>
     </div>
