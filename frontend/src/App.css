@@ -1,0 +1,250 @@
+/* NOTHING Phone Brand - UIX Labs Dark Theme */
+
+/* Font Face Declaration */
+@font-face {
+  font-family: 'Nothing';
+  src: url('./fonts/nothing-font-5x7.otf') format('opentype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* Dark Theme Color System */
+:root {
+  /* Backgrounds - Dark Theme Foundation */
+  --bg-primary: #000000;           /* Main page background */
+  --bg-secondary: #121212;         /* Card/section backgrounds */
+  --bg-overlay: rgba(255, 255, 255, 0.1); /* Subtle overlays */
+  
+  /* Text - High Contrast for Dark Theme */
+  --text-primary: #FFFFFF;         /* Main headings and content */
+  --text-secondary: rgba(255, 255, 255, 0.85); /* Supporting text */
+  --text-muted: #4D4D4D;           /* Muted text, navigation */
+  
+  /* Borders - Subtle Dark Theme */
+  --border-subtle: rgba(255, 255, 255, 0.25); /* Subtle separators */
+  --border-medium: rgba(255, 255, 255, 0.4);  /* Standard borders */
+  
+  /* MAIN ACCENT COLORS - Brand Colors Only */
+  --brand-primary: #00FFD1;        /* Primary brand cyan-green */
+  --brand-hover: rgba(0, 255, 209, 0.1); /* Hover backgrounds */
+  --brand-active: #6FD2C0;         /* Active states */
+}
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Nothing', 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Navigation Header - Transparent with Rounded Corners */
+.nothing-header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1000;
+  backdrop-filter: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.nothing-header:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Branding */
+.nothing-brand {
+  font-family: 'Nothing', 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: all 0.4s ease-in-out;
+}
+
+.nothing-brand:hover {
+  color: var(--brand-primary);
+}
+
+/* Navigation Center */
+.nothing-nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nothing-explore-btn {
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+  padding: 14px 24px;
+  font-family: 'Nothing', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+.nothing-explore-btn:hover {
+  color: var(--brand-primary);
+  background: var(--brand-hover);
+}
+
+/* Navigation Right */
+.nothing-nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nothing-launch-btn {
+  background: transparent;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+  padding: 14px 24px;
+  font-family: 'Nothing', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+.nothing-launch-btn:hover {
+  color: var(--brand-primary);
+  background: var(--brand-hover);
+}
+
+/* Scratch Card Video Styles */
+.scratch-card-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scratch-video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.scratch-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: crosshair;
+}
+
+.scratch-instructions {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Nothing', 'Arial', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nothing-header {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    padding: 12px 20px;
+    height: 70px;
+  }
+  
+  .nothing-brand {
+    font-size: 20px;
+  }
+  
+  .nothing-explore-btn,
+  .nothing-launch-btn {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+  
+  .scratch-instructions {
+    font-size: 18px;
+  }
+  
+  .scratch-canvas {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 480px) {
+  .nothing-header {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+  
+  .nothing-nav-center {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+  
+  .scratch-instructions {
+    font-size: 16px;
+  }
+}
