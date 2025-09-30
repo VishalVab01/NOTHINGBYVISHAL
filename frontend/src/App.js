@@ -3,11 +3,11 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SecondPage from "./pages/SecondPage";
-import useSlowScrollAnimation from "./hooks/useSlowScrollAnimation";
+import useLenis from "./hooks/useLenis";
 
 function App() {
-  // Initialize slow scroll animation for smooth page transitions
-  useSlowScrollAnimation();
+  // Initialize Lenis for smooth scrolling
+  useLenis();
 
   return (
     <div className="App">

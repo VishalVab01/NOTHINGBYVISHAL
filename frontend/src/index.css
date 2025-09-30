@@ -2,21 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom scroll control - disable default smooth scrolling */
+/* Lenis smooth scroll setup */
 @layer base {
   html {
-    scroll-behavior: auto !important;
-    /* Disable momentum scrolling on iOS */
-    -webkit-overflow-scrolling: auto;
-  }
-  
-  * {
-    scroll-behavior: auto !important;
+    /* Let Lenis handle scroll behavior */
+    overflow-x: hidden;
   }
   
   body {
-    scroll-behavior: auto !important;
-    /* Prevent overscroll effects */
+    /* Prevent overscroll effects for better performance */
     overscroll-behavior: none;
   }
 }

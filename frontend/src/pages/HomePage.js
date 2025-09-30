@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ScratchCardVideo from "../components/ScratchCardVideo";
+import ScatteredImages from "../components/ScatteredImages";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -88,6 +89,8 @@ const HomePage = () => {
         position: 'relative',
         zIndex: 1000
       }}>
+        {/* Scattered Images */}
+        <ScatteredImages />
         {/* Content Area */}
         <div style={{
           maxWidth: '1200px',
