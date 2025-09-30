@@ -66,7 +66,7 @@ const ScrollZoomImages = () => {
             style={getImageStyles(index)}
           >
             <img 
-              src={img.url} 
+              src={image.url} 
               alt={image.alt}
               loading="lazy"
             />
