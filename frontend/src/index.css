@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling base layer */
+@layer base {
+  html {
+    scroll-behavior: smooth !important;
+  }
+  
+  * {
+    scroll-behavior: smooth !important;
+  }
+  
+  body {
+    scroll-behavior: smooth !important;
+  }
+}
+
 /* Base styles for NOTHING brand */
 body {
     margin: 0;

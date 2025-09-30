@@ -8,6 +8,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'NextGameExtraBold';
+  src: url('./fonts/NextGameExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
 /* Dark Theme Color System */
 :root {
   /* Backgrounds - Dark Theme Foundation */
@@ -35,6 +42,41 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth !important;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 100px; /* Account for fixed header */
+}
+
+body {
+  scroll-behavior: smooth !important;
+}
+
+/* Enhanced smooth scrolling for webkit browsers */
+* {
+  -webkit-scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 html, body {
@@ -246,5 +288,165 @@ html, body {
   
   .scratch-instructions {
     font-size: 16px;
+  }
+}
+
+/* Bottom Large Text - EXPLORENOTHING */
+.bottom-text {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  pointer-events: none;
+  user-select: none;
+  max-width: 90vw;
+  padding: 0 20px;
+}
+
+.bottom-text-content {
+  font-family: 'NextGameExtraBold', 'Nothing', Arial, sans-serif;
+  color: #FFFFFF;
+  font-size: clamp(2rem, 6.7vw, 10rem);
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: visible;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive adjustments for bottom text */
+@media (max-width: 768px) {
+  .bottom-text {
+    bottom: 15px;
+    max-width: 95vw;
+    padding: 0 15px;
+  }
+  
+  .bottom-text-content {
+    font-size: clamp(2.5rem, 7vw, 8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-text {
+    bottom: 10px;
+    max-width: 98vw;
+    padding: 0 10px;
+  }
+  
+  .bottom-text-content {
+    font-size: clamp(2rem, 6vw, 6rem);
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Scroll Zoom Images Animation */
+.scroll-zoom-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300vh; /* Extended height for scroll effect */
+  z-index: 4; /* Above everything except header and bottom text */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scroll-zoom-image-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+/* Position each image at different locations */
+.scroll-zoom-image-wrapper.image-1 {
+  top: 15%;
+  left: 10%;
+}
+
+.scroll-zoom-image-wrapper.image-2 {
+  top: 35%;
+  right: 8%;
+}
+
+.scroll-zoom-image-wrapper.image-3 {
+  top: 60%;
+  left: 15%;
+}
+
+.scroll-zoom-image-wrapper.image-4 {
+  top: 80%;
+  right: 12%;
+}
+
+.scroll-zoom-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 255, 209, 0.6);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-origin: center center;
+  border: 2px solid rgba(0, 255, 209, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-zoom-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.1) contrast(1.2) saturate(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-zoom-image {
+    width: 300px;
+    height: 200px;
+  }
+  
+  .scroll-zoom-image-wrapper.image-1 {
+    left: -5%;
+  }
+  
+  .scroll-zoom-image-wrapper.image-2 {
+    right: -10%;
+  }
+  
+  .scroll-zoom-image-wrapper.image-3 {
+    left: 0%;
+  }
+  
+  .scroll-zoom-image-wrapper.image-4 {
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-zoom-image {
+    width: 250px;
+    height: 150px;
+    border-radius: 12px;
+  }
+  
+  .scroll-zoom-container {
+    height: 250vh;
+  }
+  
+  .scroll-zoom-image-wrapper {
+    height: 80vh;
   }
 }

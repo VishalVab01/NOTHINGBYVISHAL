@@ -1,5 +1,6 @@
 import React from "react";
 import ScratchCardVideo from "../components/ScratchCardVideo";
+import ScrollZoomImages from "../components/ScrollZoomImages";
 
 const HomePage = () => {
   return (
@@ -28,8 +29,18 @@ const HomePage = () => {
         </div>
       </header>
 
+      {/* Scroll Zoom Images Background */}
+      <ScrollZoomImages />
+
       {/* Scratch Card Video Background */}
       <ScratchCardVideo />
+
+      {/* Bottom Fixed Text */}
+      <div className="bottom-text">
+        <div className="bottom-text-content">
+          EXPLORENOTHING
+        </div>
+      </div>
     </div>
   );
 };
