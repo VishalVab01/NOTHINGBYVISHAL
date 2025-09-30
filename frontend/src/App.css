@@ -42,22 +42,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth !important;
+  /* Disable default scroll behavior - using custom animation */
+  scroll-behavior: auto !important;
 }
 
-/* Smooth Scrolling */
+/* Custom Slow Scrolling - Override defaults */
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: auto !important;
   scroll-padding-top: 100px; /* Account for fixed header */
+  /* Prevent default scroll momentum on mobile */
+  -webkit-overflow-scrolling: auto;
+  overflow-scrolling: auto;
 }
 
 body {
-  scroll-behavior: smooth !important;
+  scroll-behavior: auto !important;
+  /* Prevent scroll chaining */
+  overscroll-behavior: none;
 }
 
-/* Enhanced smooth scrolling for webkit browsers */
+/* Remove webkit scroll behavior for custom control */
 * {
-  -webkit-scroll-behavior: smooth;
+  -webkit-scroll-behavior: auto;
 }
 
 /* Custom scrollbar styling */
@@ -305,14 +311,16 @@ html, body {
   z-index: 999;
   pointer-events: none;
   user-select: none;
-  max-width: 90vw;
-  padding: 0 20px;
+  width: 100vw; /* Full width to ensure text doesn't get cut off */
+  max-width: none; /* Remove max-width restriction */
+  padding: 0 10px; /* Reduce padding for more space */
+  overflow: visible; /* Ensure text is visible */
 }
 
 .bottom-text-content {
   font-family: 'NextGameExtraBold', 'Nothing', Arial, sans-serif;
   color: #FFFFFF;
-  font-size: clamp(2rem, 6.7vw, 10rem);
+  font-size: clamp(2rem, 6.5vw, 9rem); /* Slightly smaller to fit better */
   font-weight: normal;
   letter-spacing: 0.02em;
   line-height: 1;
@@ -322,31 +330,90 @@ html, body {
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%; /* Ensure full width usage */
 }
 
 /* Responsive adjustments for bottom text */
 @media (max-width: 768px) {
   .bottom-text {
     bottom: 15px;
-    max-width: 95vw;
-    padding: 0 15px;
+    padding: 0 5px;
   }
   
   .bottom-text-content {
-    font-size: clamp(2.5rem, 7vw, 8rem);
+    font-size: clamp(2.2rem, 6vw, 7rem); /* Adjusted for better fit */
   }
 }
 
 @media (max-width: 480px) {
   .bottom-text {
     bottom: 10px;
-    max-width: 98vw;
-    padding: 0 10px;
+    padding: 0 5px;
   }
   
   .bottom-text-content {
-    font-size: clamp(2rem, 6vw, 6rem);
+    font-size: clamp(1.8rem, 5.5vw, 5rem); /* Smaller to ensure full word fits */
     letter-spacing: 0.01em;
+  }
+}
+
+/* Split Text Animation Styles */
+.bottom-text-content {
+  display: flex;
+  overflow: visible; /* Changed to visible to show full text */
+  position: relative;
+  width: 100%;
+  justify-content: center; /* Center the text */
+}
+
+.explore-static {
+  /* Static part - no animation */
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.nothing-slide-up {
+  /* Animated part - slides up from below */
+  display: inline-block;
+  position: relative;
+  /* Start from below (100% down) */
+  transform: translateY(100%);
+  /* Animate up to normal position */
+  animation: slideUpFromBottom 2s ease-out 0.5s forwards;
+}
+
+/* Keyframe animation for sliding up */
+@keyframes slideUpFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Ensure smooth animation performance */
+.nothing-slide-up {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Responsive animation adjustments */
+@media (max-width: 768px) {
+  .nothing-slide-up {
+    animation-duration: 1.8s;
+  }
+}
+
+@media (max-width: 480px) {
+  .nothing-slide-up {
+    animation-duration: 1.5s;
   }
 }
 

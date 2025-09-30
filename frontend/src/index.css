@@ -2,18 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling base layer */
+/* Custom scroll control - disable default smooth scrolling */
 @layer base {
   html {
-    scroll-behavior: smooth !important;
+    scroll-behavior: auto !important;
+    /* Disable momentum scrolling on iOS */
+    -webkit-overflow-scrolling: auto;
   }
   
   * {
-    scroll-behavior: smooth !important;
+    scroll-behavior: auto !important;
   }
   
   body {
-    scroll-behavior: smooth !important;
+    scroll-behavior: auto !important;
+    /* Prevent overscroll effects */
+    overscroll-behavior: none;
   }
 }
 

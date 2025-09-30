@@ -70,10 +70,11 @@ const HomePage = () => {
           </h2>
         </div>
 
-        {/* Bottom Fixed Text */}
+        {/* Bottom Fixed Text - Split Animation */}
         <div className="bottom-text">
           <div className="bottom-text-content">
-            EXPLORENOTHING
+            <span className="explore-static">EXPLORE</span>
+            <span className="nothing-slide-up">NOTHING</span>
           </div>
         </div>
       </div>

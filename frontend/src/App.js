@@ -3,11 +3,11 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SecondPage from "./pages/SecondPage";
-import useSmoothScroll from "./hooks/useSmoothScroll";
+import useSlowScrollAnimation from "./hooks/useSlowScrollAnimation";
 
 function App() {
-  // Initialize smooth scrolling
-  useSmoothScroll();
+  // Initialize slow scroll animation for smooth page transitions
+  useSlowScrollAnimation();
 
   return (
     <div className="App">
