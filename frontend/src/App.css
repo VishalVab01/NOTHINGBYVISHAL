@@ -94,13 +94,13 @@ html, body {
   background: var(--bg-primary);
 }
 
-/* Navigation Header - Transparent with Rounded Corners */
+/* Navigation Header - Translucent with Blur Effect */
 .nothing-header {
   position: fixed;
   top: 20px;
   left: 20px;
   right: 20px;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: 50px;
   padding: 16px 32px;
@@ -109,12 +109,14 @@ html, body {
   justify-content: space-between;
   height: 80px;
   z-index: 1000;
-  backdrop-filter: none;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   transition: all 0.4s ease-in-out;
 }
 
 .nothing-header:hover {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 /* Branding */
@@ -450,3 +452,5 @@ html, body {
     height: 80vh;
   }
 }
+/* App.css or index.css */
+
