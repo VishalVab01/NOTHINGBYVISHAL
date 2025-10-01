@@ -145,12 +145,7 @@ const ScratchCardVideo = () => {
         onTouchEnd={handleTouchEnd}
       />
       
-      {/* Instructions */}
-      {scratchedAreas < 10 && (
-        <div className="scratch-instructions">
-          <p>Hold and drag to reveal</p>
-        </div>
-      )}
+      {/* Instructions removed */}
     </div>
   );
 };

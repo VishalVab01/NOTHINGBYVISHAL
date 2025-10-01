@@ -1,21 +1,55 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ScratchCardVideo from "./ScratchCardVideo";
 import ScatteredImages from "./ScatteredImages";
 
 const HeroSection = () => {
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Show text when hero section is at least 20% visible
+          if (entry.intersectionRatio > 0.2) {
+            setIsHeroVisible(true);
+          } else {
+            setIsHeroVisible(false);
+          }
+        });
+      },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0], // Multiple thresholds for smooth transition
+        rootMargin: '0px'
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div style={{ 
-      height: '100vh', 
-      position: 'relative',
-      overflow: 'hidden'
-    }}>
+    <div 
+      ref={heroRef}
+      style={{ 
+        height: '100vh', 
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
       {/* Scratch Card Video Background */}
       <ScratchCardVideo />
 
       {/* Scattered Images */}
       <ScatteredImages />
 
-      {/* Central Brand Message */}
+      {/* Central Brand Message - Only visible when in hero section */}
       <div style={{
         position: 'absolute',
         top: '50%',
@@ -24,7 +58,10 @@ const HeroSection = () => {
         zIndex: 500,
         textAlign: 'center',
         pointerEvents: 'none',
-        userSelect: 'none'
+        userSelect: 'none',
+        opacity: isHeroVisible ? 1 : 0,
+        visibility: isHeroVisible ? 'visible' : 'hidden',
+        transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out'
       }}>
         <h2 style={{
           fontFamily: 'Nothing, Arial, sans-serif',
@@ -41,8 +78,15 @@ const HeroSection = () => {
         </h2>
       </div>
 
-      {/* Bottom Fixed Text - Split Animation */}
-      <div className="bottom-text">
+      {/* Bottom Fixed Text - Split Animation - Only visible when in hero section */}
+      <div 
+        className="bottom-text"
+        style={{
+          opacity: isHeroVisible ? 1 : 0,
+          visibility: isHeroVisible ? 'visible' : 'hidden',
+          transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out'
+        }}
+      >
         <div className="bottom-text-content">
           <span className="explore-static">EXPLORE</span>
           <span className="nothing-slide-up">NOTHING</span>
