@@ -18,6 +18,28 @@ const HomePage = () => {
 
       {/* Third Section - Transparency Section */}
       <TransparencySection />
+
+      {/* Fourth Section - Full Screen Image at Bottom */}
+      <div style={{
+        width: '100vw',
+        height: '100vh',
+        position: 'relative',
+        overflow: 'hidden',
+        zIndex: 99, // High z-index to ensure it appears above other elements
+        marginTop: '-1116px' // Move the image section up
+      }}>
+        <img 
+          src="/nothing_phone_image.jpg"
+          alt="Person with Nothing phone"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+            clipPath: 'polygon(0% 20%, 100% 50%, 100% 100%, 0% 100%)' // Slanted cut to complement blur shape
+          }}
+        />
+      </div>
     </div>
   );
 };
