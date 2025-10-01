@@ -68,12 +68,8 @@ const TechSection = () => {
           paddingBottom: '200px' // Much more padding to ensure button has space
         }}>
           <p style={{ margin: '0', width: '100%' }}>
-            EVERYTHING.&nbsp;&nbsp;EVERY&nbsp;&nbsp;LAYER&nbsp;&nbsp;EXPOSED&nbsp;&nbsp;WITH<br/>&nbsp;&nbsp;PRECISION,  
-            EVERY&nbsp;&nbsp;COMPONENT<br/>
-            CRAFTED&nbsp;&nbsp;TO&nbsp;&nbsp;BE&nbsp;&nbsp;SEEN,&nbsp;&nbsp;NOT&nbsp;&nbsp;HIDDEN.&nbsp;&nbsp;IT'S&nbsp;&nbsp;A<br></br>&nbsp;&nbsp;DEVICE&nbsp;&nbsp;BUILT&nbsp;&nbsp;TO&nbsp;&nbsp;CELEBRATE<br/>
-            <span style={{ color: '#CCCCCC' }}>TRANSPARENCY</span>&nbsp;&nbsp;—  
-            TURNING&nbsp;&nbsp;<span style={{ color: '#CCCCCC' }}>COMPLEXITY</span><br/>
-            <span style={{ color: '#CCCCCC' }}>INTO&nbsp;&nbsp;CLARITY.</span>
+            EVERYTHING. EVERY LAYER EXPOSED WITH<br/>PRECISION, EVERY COMPONENT CRAFTED TO BE SEEN, NOT HIDDEN. IT'S A DEVICE BUILT TO CELEBRATE <span style={{ color: '#CCCCCC' }}>TRANSPARENCY</span> — SMTURNING<br/>
+            <span style={{ color: '#CCCCCC' }}>COMPLEXITY INTO CLARITY.</span>
           </p>
         </div>
       </div>
