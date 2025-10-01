@@ -1,8 +1,12 @@
 .scattered-images-container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 100;
+  overflow: hidden; /* Prevent images from creating scrollbars when moving off-screen */
 }
 
 .scattered-image {
@@ -90,11 +94,13 @@
     /* Adjust positions for smaller screens */
   }
   
-  .scattered-image:nth-child(1) { top: 10% !important; left: 5% !important; }
-  .scattered-image:nth-child(2) { top: 20% !important; right: 8% !important; }
-  .scattered-image:nth-child(3) { top: 50% !important; left: 10% !important; }
+  /* Left side images */
+  .scattered-image:nth-child(1) { top: 18% !important; left: 3% !important; }
+  .scattered-image:nth-child(2) { top: 60% !important; left: 5% !important; }
+  /* Right side images */
+  .scattered-image:nth-child(3) { top: 12% !important; right: 8% !important; }
   .scattered-image:nth-child(4) { top: 40% !important; right: 5% !important; }
-  .scattered-image:nth-child(5) { bottom: 15% !important; left: 40% !important; }
+  .scattered-image:nth-child(5) { top: 70% !important; right: 10% !important; }
 }
 
 @media (max-width: 480px) {
@@ -103,9 +109,11 @@
     height: 120px;
   }
   
-  .scattered-image:nth-child(1) { top: 8% !important; left: 3% !important; }
-  .scattered-image:nth-child(2) { top: 18% !important; right: 5% !important; }
-  .scattered-image:nth-child(3) { top: 45% !important; left: 8% !important; }
-  .scattered-image:nth-child(4) { top: 35% !important; right: 3% !important; }
-  .scattered-image:nth-child(5) { bottom: 12% !important; left: 35% !important; }
+  /* Left side images */
+  .scattered-image:nth-child(1) { top: 15% !important; left: 2% !important; }
+  .scattered-image:nth-child(2) { top: 55% !important; left: 3% !important; }
+  /* Right side images */
+  .scattered-image:nth-child(3) { top: 10% !important; right: 5% !important; }
+  .scattered-image:nth-child(4) { top: 35% !important; right: 2% !important; }
+  .scattered-image:nth-child(5) { top: 65% !important; right: 8% !important; }
 }

@@ -45,6 +45,9 @@ const HomePage = () => {
         {/* Scratch Card Video Background */}
         <ScratchCardVideo />
 
+        {/* Scattered Images */}
+        <ScatteredImages />
+
         {/* Central Brand Message */}
         <div style={{
           position: 'absolute',
@@ -89,8 +92,6 @@ const HomePage = () => {
         position: 'relative',
         zIndex: 1000
       }}>
-        {/* Scattered Images */}
-        <ScatteredImages />
         {/* Content Area */}
         <div style={{
           maxWidth: '1200px',

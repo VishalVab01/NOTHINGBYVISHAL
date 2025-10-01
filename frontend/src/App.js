@@ -6,7 +6,6 @@ import SecondPage from "./pages/SecondPage";
 import useLenis from "./hooks/useLenis";
 
 function App() {
-  // Initialize Lenis for smooth scrolling
   useLenis();
 
   return (
