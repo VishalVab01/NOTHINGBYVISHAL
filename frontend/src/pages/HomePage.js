@@ -1,45 +1,20 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import ScratchCardVideo from "../components/ScratchCardVideo";
 import ScatteredImages from "../components/ScatteredImages";
+import Navbar from "../components/Navbar";
 
 const HomePage = () => {
-  const navigate = useNavigate();
-
   return (
     <div>
+      {/* Shared Navbar - will be visible on all sections */}
+      <Navbar />
+      
       {/* First Section - Original Home Page Content */}
       <div style={{ 
         height: '100vh', 
         position: 'relative',
         overflow: 'hidden'
       }}>
-        {/* Navigation Header */}
-        <header className="nothing-header">
-          {/* Left - Branding */}
-          <div className="nothing-nav-left">
-            <a href="/" className="nothing-brand">
-              NOTHING
-            </a>
-          </div>
-
-          {/* Center - Explore Button */}
-          <div className="nothing-nav-center">
-            <button className="nothing-explore-btn">
-              EXPLORE NOTHING
-            </button>
-          </div>
-
-          {/* Right - New Launch Button */}
-          <div className="nothing-nav-right">
-            <button 
-              className="nothing-launch-btn"
-              onClick={() => navigate('/second')}
-            >
-              NEW LAUNCH
-            </button>
-          </div>
-        </header>
 
         
         {/* Scratch Card Video Background */}
@@ -89,7 +64,7 @@ const HomePage = () => {
         padding: '80px 0px 150px', // Increased bottom padding significantly
         color: '#FFFFFF',
         position: 'relative',
-        zIndex: 1000,
+        zIndex: 100,
         width: '100vw',
         minHeight: '150vh' // Make section much taller to accommodate all content
       }}>
@@ -167,7 +142,7 @@ const HomePage = () => {
         padding: '80px 40px 40px',
         color: '#FFFFFF',
         position: 'relative',
-        zIndex: 1000,
+        zIndex: 100,
         width: '100vw',
         display: 'flex',
         alignItems: 'center',
