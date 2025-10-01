@@ -3,26 +3,25 @@ import React from "react";
 const TransparencySection = () => {
   return (
     <div style={{ 
-      minHeight: '100vh', 
-      background: '#000000',
-      padding: '80px 40px 40px',
+      minHeight: '100vh',
+      background: '#000000', // Plain black background - nothing else as requested
       color: '#FFFFFF',
       position: 'relative',
-      zIndex: 100,
+      zIndex: 1, // Lower z-index to not interfere with blur shape
       width: '100vw',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      marginTop: '200px' // Add margin to ensure it appears below blur shape area
     }}>
       <div style={{
         textAlign: 'center',
-        maxWidth: '1200px',
         width: '100%'
       }}>
-        {/* Main TRANSPARENCY Heading */}
+        {/* Main TRANSPARENCY Heading - only this, nothing else */}
         <h1 style={{
           fontFamily: 'Azonix-new, Azonix, Arial, sans-serif',
-          fontSize: '120px',
+          fontSize: 'clamp(60px, 8vw, 120px)',
           lineHeight: '1.1',
           fontWeight: 'normal',
           color: '#FF6B35', // Orange color
