@@ -87,63 +87,70 @@ const HomePage = () => {
       <div style={{ 
         minHeight: '100vh', 
         background: '#000000',
-        padding: '80px 40px 40px',
+        padding: '80px 60px 40px',
         color: '#FFFFFF',
         position: 'relative',
-        zIndex: 1000
+        zIndex: 1000,
+        width: '100vw'
       }}>
-        {/* Content Area */}
+        {/* Container for layout */}
         <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto'
+          display: 'flex',
+          alignItems: 'flex-start',
+          position: 'relative',
+          width: '100%',
+          height: '100%'
         }}>
-          {/* Main Heading */}
-          <h1 style={{
-            fontFamily: 'Nothing, Arial, sans-serif',
-            fontSize: '48px',
-            fontWeight: 'bold',
-            marginBottom: '40px',
-            color: '#FFFFFF',
-            textAlign: 'center',
-            textTransform: 'uppercase',
-            letterSpacing: '2px'
-          }}>
-            Welcome to Content
-          </h1>
-
-          {/* Content Body */}
+          {/* Upper Left Image */}
           <div style={{
-            fontFamily: 'Nothing, Arial, sans-serif',
-            fontSize: '18px',
-            lineHeight: '1.8',
-            color: '#FFFFFF',
-            maxWidth: '800px',
-            margin: '0 auto'
+            width: '350px',
+            height: '500px',
+            position: 'absolute',
+            top: '40px',
+            left: '40px'
           }}>
-            <p style={{ marginBottom: '24px' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            
-            <p style={{ marginBottom: '24px' }}>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            </p>
-            
-            <p style={{ marginBottom: '24px' }}>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            </p>
-
-            <p style={{ marginBottom: '24px' }}>
-              Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
-            </p>
-
-            <p style={{ marginBottom: '24px' }}>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-            </p>
-
-            <p>
-              Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-            </p>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_9350f6eb-79d9-4589-b813-b1ad49710dfe/artifacts/dh5rqqp0_darkGirl.jpg"
+              alt="Tech Design"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            />
           </div>
+
+         {/* Second Section - Fullscreen Text Section */}
+<div style={{ 
+  minHeight: '100vh', 
+  background: '#000000',
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  padding: '700px',
+  color: '#FFFFFF',
+  textAlign: 'right',
+  height: '1200px'
+}}>
+  <div style={{
+    maxWidth: '1000px',
+    paddingRight: '0px',   // adjust this value to control gap from right edge
+    fontFamily: 'NextGameExtraBold, Arial, sans-serif',
+    fontSize: '45px',
+    lineHeight: '1.2',
+    fontWeight: 'normal'
+  }}>
+    <p>
+      A TECH WHERE DESIGN REVEAL EVERYTHING.  
+      EVERY LAYER EXPOSED WITH PRECISION,  
+      EVERY COMPONENT CRAFTED TO BE SEEN, NOT HIDDEN.  
+      IT'S A DEVICE BUILT TO CELEBRATE <span style={{ color: '#CCCCCC' }}>TRANSPARENCY</span> —  
+      TURNING <span style={{ color: '#CCCCCC' }}>COMPLEXITY INTO CLARITY.</span>
+    </p>
+  </div>
+</div>
+
+
         </div>
       </div>
     </div>
