@@ -85,19 +85,20 @@ const HomePage = () => {
 
       {/* Second Section - Image and Text Section */}
       <div style={{ 
-        minHeight: '100vh', 
         background: '#000000',
-        padding: '80px 0px 40px',
+        padding: '80px 0px 150px', // Increased bottom padding significantly
         color: '#FFFFFF',
         position: 'relative',
         zIndex: 1000,
-        width: '100vw'
+        width: '100vw',
+        minHeight: '150vh' // Make section much taller to accommodate all content
       }}>
         {/* Container for layout */}
         <div style={{
           position: 'relative',
           width: '100%',
-          height: '100%'
+          height: 'auto',
+          paddingBottom: '300px' // Much more space to ensure text doesn't get cut
         }}>
           {/* Upper Left Image */}
           <div style={{
@@ -125,7 +126,7 @@ const HomePage = () => {
             left: '455px',       // Adjust this value to move left/right (right edge of image)
             right: 'auto',       // Adjust this value for right positioning
             bottom: 'auto',      // Adjust this value for bottom positioning
-            fontFamily: 'Azonix, Arial, sans-serif',
+            fontFamily: 'Azonix-new, Azonix, Arial, sans-serif',
             fontSize: '50px',
             lineHeight: '1.3',
             fontWeight: 'normal',
@@ -141,10 +142,11 @@ const HomePage = () => {
             left: '0px',
             width: '100vw',
             padding: '0px 40px',
-            fontFamily: 'Azonix, Arial, sans-serif',
+            fontFamily: 'Azonix-new, Azonix, Arial, sans-serif',
             fontSize: '50px',
-            lineHeight: '1.3',
-            fontWeight: 'normal'
+            lineHeight: '1',
+            fontWeight: 'normal',
+            paddingBottom: '200px' // Much more padding to ensure button has space
           }}>
             <p style={{ margin: '0', width: '100%' }}>
               EVERYTHING.&nbsp;&nbsp;EVERY&nbsp;&nbsp;LAYER&nbsp;&nbsp;EXPOSED&nbsp;&nbsp;WITH<br/>&nbsp;&nbsp;PRECISION,  
@@ -154,36 +156,41 @@ const HomePage = () => {
               TURNING&nbsp;&nbsp;<span style={{ color: '#CCCCCC' }}>COMPLEXITY</span><br/>
               <span style={{ color: '#CCCCCC' }}>INTO&nbsp;&nbsp;CLARITY.</span>
             </p>
-            
-            {/* Navigation to third page if content is extensive */}
-            <div style={{ marginTop: '60px', textAlign: 'center' }}>
-              <button 
-                onClick={() => navigate('/third')}
-                style={{
-                  background: 'transparent',
-                  border: '2px solid #FFFFFF',
-                  color: '#FFFFFF',
-                  padding: '15px 30px',
-                  fontSize: '16px',
-                  fontFamily: 'Azonix, Arial, sans-serif',
-                  cursor: 'pointer',
-                  textTransform: 'uppercase',
-                  letterSpacing: '2px',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseOver={(e) => {
-                  e.target.style.background = '#FFFFFF';
-                  e.target.style.color = '#000000';
-                }}
-                onMouseOut={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.color = '#FFFFFF';
-                }}
-              >
-                EXPLORE MORE
-              </button>
-            </div>
           </div>
+        </div>
+      </div>
+
+      {/* Third Section - TRANSPARENCY */}
+      <div style={{ 
+        minHeight: '100vh', 
+        background: '#000000',
+        padding: '80px 40px 40px',
+        color: '#FFFFFF',
+        position: 'relative',
+        zIndex: 1000,
+        width: '100vw',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <div style={{
+          textAlign: 'center',
+          maxWidth: '1200px',
+          width: '100%'
+        }}>
+          {/* Main TRANSPARENCY Heading */}
+          <h1 style={{
+            fontFamily: 'Azonix-new, Azonix, Arial, sans-serif',
+            fontSize: '120px',
+            lineHeight: '1.1',
+            fontWeight: 'normal',
+            color: '#FF6B35', // Orange color
+            margin: '0',
+            textTransform: 'uppercase',
+            letterSpacing: '8px'
+          }}>
+            TRANSPARENCY
+          </h1>
         </div>
       </div>
     </div>

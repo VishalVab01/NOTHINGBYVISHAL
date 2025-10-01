@@ -15,6 +15,20 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Azonix';
+  src: url('./fonts/Azonix.otf') format('opentype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Azonix-new';
+  src: url('./fonts/Azonix-new.otf') format('opentype');
+  font-weight: normal;
+  font-display: swap;
+}
+
 /* Dark Theme Color System */
 :root {
   /* Backgrounds - Dark Theme Foundation */
@@ -317,9 +331,9 @@ html, body {
 }
 
 .bottom-text-content {
-  font-family: 'NextGameExtraBold', 'Nothing', Arial, sans-serif;
+  font-family: 'Azonix-new', 'Azonix', Arial, sans-serif;
   color: #FFFFFF;
-  font-size: clamp(2rem, 6.5vw, 9rem); /* Slightly smaller to fit better */
+  font-size: clamp(2rem, 9vw, 13rem); /* Increased font size significantly */
   font-weight: normal;
   letter-spacing: 0.02em;
   line-height: 1;
