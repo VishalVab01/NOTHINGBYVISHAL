@@ -26,7 +26,7 @@ const HomePage = () => {
         position: 'relative',
         overflow: 'hidden',
         zIndex: 99, // High z-index to ensure it appears above other elements
-        marginTop: '-1116px' // Move the image section up
+        marginTop: '-958px' // Move the image section up
       }}>
         <img 
           src="/nothing_phone_image.jpg"
@@ -36,9 +36,39 @@ const HomePage = () => {
             height: '100%',
             objectFit: 'cover',
             display: 'block',
-            clipPath: 'polygon(0% 20%, 100% 50%, 100% 100%, 0% 100%)' // Slanted cut to complement blur shape
+            clipPath: 'polygon(0% 0%, 100% 30%, 100% 100%, 0% 100%)' // Keep the 30% slant on right side
           }}
         />
+      </div>
+
+      {/* Fifth Section - Come to Play */}
+      <div 
+        id="cometoplay"
+        style={{
+          width: '100vw',
+          height: '100vh',
+          position: 'relative',
+          backgroundColor: 'black',
+          zIndex: 100,
+          marginTop: '-250px', // Adjust this value to move the section up
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden'
+        }}
+      >
+        <div style={{
+          fontFamily: 'Azonix, monospace',
+          fontSize: '28vw', // Responsive font size based on viewport width
+          fontWeight: 'normal',
+          color: 'white',
+          textAlign: 'center',
+          lineHeight: '0.8',
+          letterSpacing: '0.1em',
+          userSelect: 'none'
+        }}>
+          COME
+        </div>
       </div>
     </div>
   );
