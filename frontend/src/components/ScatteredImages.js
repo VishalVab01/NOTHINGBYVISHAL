@@ -27,7 +27,7 @@ const ScatteredImages = () => {
     },
     {
       url: "https://customer-assets.emergentagent.com/job_smooth-scroll-17/artifacts/w15cm22k_Screenshot%202025-10-01%20021120.png",
-      position: { top: '65%', left: '8%', rotate: '15deg' },
+      position: { top: '55%', left: '8%', rotate: '15deg' },
       side: 'left'
     },
     // Right side images (3 images)
