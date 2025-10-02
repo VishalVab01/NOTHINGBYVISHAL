@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { gsap } from 'gsap';
 import ScratchCardVideo from "./ScratchCardVideo";
-import ScatteredImages from "./ScatteredImages";
 
 const HeroSection = () => {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
@@ -85,14 +84,10 @@ const HeroSection = () => {
       ref={heroRef}
       style={{ 
         height: '100vh', 
-        position: 'relative',
         overflow: 'hidden'
       }}>
       {/* Scratch Card Video Background */}
       <ScratchCardVideo />
-
-      {/* Scattered Images */}
-      <ScatteredImages />
 
       {/* Central Brand Message - Only visible when in hero section */}
       <div 

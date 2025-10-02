@@ -7,12 +7,16 @@ import SmallWhitePage from "../components/SmallWhitePage";
 import HorizontalScrollContainer from "../components/HorizontalScrollContainer";
 import VerticalScrollSection from "../components/VerticalScrollSection";
 import TranslucentPage from "../components/TranslucentPage";
+import ScatteredImages from "../components/ScatteredImages";
 
 const HomePage = () => {
   return (
-    <div>
+    <div style={{ position: 'relative' }}>
       {/* Shared Navbar - will be visible on all sections */}
       <Navbar />
+      
+      {/* Scattered Images - Rendered at top level to avoid stacking context issues */}
+      <ScatteredImages />
       
       {/* First Section - Hero Section */}
       <HeroSection />
