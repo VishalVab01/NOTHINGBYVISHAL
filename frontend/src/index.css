@@ -64,6 +64,10 @@ code {
 }
 /* App.css or index.css */
 
+/* Custom cursor implementation */
+* {
+  cursor: none !important;
+}
 
 @layer base {
   * {

@@ -4,12 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SecondPage from "./pages/SecondPage";
 import useLenis from "./hooks/useLenis";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   useLenis();
 
   return (
     <div className="App">
+      <CustomCursor />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
