@@ -1,13 +1,17 @@
 import React, { useRef, useEffect, useState } from "react";
+import { gsap } from "gsap";
 
 const VerticalScrollSection = () => {
   const sectionRef = useRef(null);
+  const imageRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [animationPhase, setAnimationPhase] = useState('normal'); // 'normal', 'scaling', 'scaled'
 
   useEffect(() => {
     const handleScroll = () => {
       const section = sectionRef.current;
-      if (!section) return;
+      const imageElement = imageRef.current;
+      if (!section || !imageElement) return;
 
       const rect = section.getBoundingClientRect();
       const sectionTop = rect.top;
@@ -19,6 +23,41 @@ const VerticalScrollSection = () => {
         // Progress from 0 (bottom of screen) to 1 (top of screen)
         const progress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
         setScrollProgress(progress);
+
+        // Handle different animation phases
+        if (animationPhase === 'normal' && progress > 0.3) {
+          // Get actual image position on screen
+          const imageRect = imageElement.getBoundingClientRect();
+          const imageTop = imageRect.top;
+          const navbarBottom = 120; // 20px top + 80px height + buffer = 120px from top
+          
+          // Check if image top edge is near or touching navbar bottom edge
+          if (imageTop <= navbarBottom) {
+            // Trigger scaling animation
+            setAnimationPhase('scaling');
+            
+            gsap.to(imageElement, {
+              scale: 3.0,
+              y: windowHeight * 0.3, // Move down to center area
+              duration: 1.2,
+              ease: "power2.out",
+              onComplete: () => {
+                setAnimationPhase('scaled');
+              }
+            });
+          }
+        }
+        
+        // Reset animation if user scrolls back up significantly
+        if (progress < 0.2 && (animationPhase === 'scaling' || animationPhase === 'scaled')) {
+          setAnimationPhase('normal');
+          gsap.to(imageElement, {
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.inOut"
+          });
+        }
       }
     };
 
@@ -26,10 +65,7 @@ const VerticalScrollSection = () => {
     handleScroll(); // Initial call
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Calculate image position (starts from bottom, moves to top)
-  const imageTransformY = 120 - (scrollProgress * 140); // Moves from 120% to -20%
+  }, [animationPhase]);
 
   return (
     <div 
@@ -47,8 +83,9 @@ const VerticalScrollSection = () => {
         overflow: 'hidden'
       }}
     >
-      {/* Header Image (replacing EXPERIENCE text) */}
+      {/* Animated Header Image - Scales up when reaching navbar */}
       <img 
+        ref={imageRef}
         src="https://customer-assets.emergentagent.com/job_text-replacer-2/artifacts/4iyxgzit_2GuysPhone3.jpg"
         alt="Experience Header"
         style={{
@@ -56,12 +93,17 @@ const VerticalScrollSection = () => {
           height: 'auto',
           marginBottom: '3rem',
           borderRadius: '15px',
-          boxShadow: '0 15px 40px rgba(0,0,0,0.6)',
-          zIndex: 10
+          boxShadow: animationPhase === 'scaled' 
+            ? '0 30px 80px rgba(0,0,0,0.9)' 
+            : '0 15px 40px rgba(0,0,0,0.6)',
+          zIndex: animationPhase === 'scaled' ? 35 : 10,
+          transformOrigin: 'center center',
+          willChange: 'transform',
+          transition: 'box-shadow 0.3s ease'
         }}
       />
 
-      {/* Single Lorem Ipsum Paragraph */}
+      {/* Single Lorem Ipsum Paragraph - Stays in place */}
       <div style={{
         maxWidth: '800px',
         textAlign: 'center',
@@ -70,7 +112,7 @@ const VerticalScrollSection = () => {
         lineHeight: '1.8',
         marginBottom: '5vh',
         fontFamily: 'Arial, sans-serif',
-        zIndex: 10
+        zIndex: 5 // Lower z-index so scaled image appears above
       }}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
@@ -81,25 +123,56 @@ const VerticalScrollSection = () => {
         </p>
       </div>
 
-      {/* Animated Image - Moves from bottom to top */}
-      <img 
-        src="https://customer-assets.emergentagent.com/job_text-replacer-2/artifacts/4iyxgzit_2GuysPhone3.jpg"
-        alt="Animated Phone Experience"
-        style={{
-          position: 'absolute',
-          width: '18vw', // Small size as requested
-          height: 'auto',
+      {/* Vertical Navigation Buttons - Appears when image is scaled */}
+      {scrollProgress > 0.4 && ( // Show buttons when scroll progress is more than 40%
+        <div style={{
+          position: 'fixed',
+          top: '55%', // Moved higher up
           left: '50%',
-          top: `${imageTransformY}%`,
           transform: 'translateX(-50%)',
-          zIndex: 25,
-          objectFit: 'contain',
-          opacity: scrollProgress > 0.05 ? 0.9 : 0, // Fade in when scrolling starts
-          borderRadius: '12px',
-          boxShadow: '0 15px 40px rgba(0,0,0,0.7)',
-          transition: 'opacity 0.3s ease'
-        }}
-      />
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '1.5rem',
+          zIndex: 50,
+          opacity: 1, // Always fully visible when container is shown
+          transition: 'opacity 0.5s ease'
+        }}>
+          {['HOME', 'NOTHING NEW', 'CMF', 'SHOP'].map((label, index) => (
+            <button
+              key={label}
+              className="vertical-nav-btn"
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)', // Slight background for visibility
+                border: 'none',
+                color: '#FFFFFF',
+                fontFamily: 'Nothing, Arial, monospace',
+                fontSize: '10.0rem', // Increased font size
+                fontWeight: 'normal',
+                cursor: 'pointer',
+                padding: '30px 50px', // Increased padding to match larger font
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                transition: 'all 0.3s ease',
+                position: 'absolute',
+                opacity: 1,
+                transformOrigin: 'center',
+                whiteSpace: 'nowrap'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = '#FF0000';
+                e.target.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = '#FFFFFF';
+                e.target.style.transform = 'scale(1)';
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Additional content for extended scroll */}
       <div style={{

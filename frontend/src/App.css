@@ -48,6 +48,7 @@
   /* MAIN ACCENT COLORS - Brand Colors Only */
   --brand-primary: #FF0000;        /* Primary brand cyan-green */
   --brand-active: #FF0000;         /* Active states */
+  --brand-hover: rgba(255, 0, 0, 0.1); /* Hover background */
 }
 
 /* Reset and Base */
@@ -323,6 +324,51 @@ html, body {
 .nothing-launch-btn:hover {
   color: var(--brand-primary);
   background: var(--brand-hover);
+}
+
+/* Vertical Navigation Buttons */
+.vertical-nav-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #FFFFFF !important;
+  font-family: 'Nothing', 'Arial', monospace !important;
+  font-size: 1.8rem !important;
+  font-weight: normal !important;
+  cursor: pointer !important;
+  padding: 15px 25px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  opacity: 1 !important;
+  transform-origin: center !important;
+  white-space: nowrap !important;
+}
+
+.vertical-nav-btn:hover {
+  color: var(--brand-primary) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Animations for vertical navigation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Scratch Card Video Styles */

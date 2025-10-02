@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import ComeToPlaySection from "./ComeToPlaySection";
 import WhitePage from "./WhitePage";
 import RedPage from "./RedPage";
+import BlackPage from "./BlackPage";
 
 const HorizontalScrollContainer = () => {
   const triggerRef = useRef(null);
@@ -65,8 +66,8 @@ const HorizontalScrollContainer = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Apply transform based on scroll progress (move from 0 to -200vw)
-  const translateX = -scrollProgress * 200; // Move 200vw to reveal all 3 sections
+  // Apply transform based on scroll progress (move from 0 to -300vw)
+  const translateX = -scrollProgress * 300; // Move 300vw to reveal all 4 sections
 
   return (
     <div>
@@ -74,7 +75,7 @@ const HorizontalScrollContainer = () => {
       <div 
         ref={triggerRef}
         style={{ 
-          height: '300vh', // Create scroll distance for horizontal animation
+          height: '400vh', // Create scroll distance for horizontal animation (4 pages)
           position: 'relative',
           marginTop: '-630px' // Connect with previous section
         }}
@@ -102,7 +103,7 @@ const HorizontalScrollContainer = () => {
             style={{
               display: 'flex',
               height: '100vh',
-              width: '300vw', // 3 sections × 100vw each
+              width: '400vw', // 4 sections × 100vw each
               transform: `translateX(${translateX}vw)`,
               transition: 'none', // Smooth but not too slow
               willChange: 'transform'
@@ -121,6 +122,11 @@ const HorizontalScrollContainer = () => {
             {/* Section 3: Red Page */}
             <div style={{ width: '100vw', height: '100vh', flexShrink: 0 }}>
               <RedPage />
+            </div>
+            
+            {/* Section 4: Black Page */}
+            <div style={{ width: '100vw', height: '100vh', flexShrink: 0 }}>
+              <BlackPage />
             </div>
           </div>
         </div>
