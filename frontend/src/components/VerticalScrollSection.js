@@ -115,11 +115,8 @@ const VerticalScrollSection = () => {
         zIndex: 5 // Lower z-index so scaled image appears above
       }}>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-          eu fugiat nulla pariatur.
+         We believe in creativity
+— in challenging the ordinary, blending art with innovation, and building technology that not only works but inspires, excites, and invites you to feel something real.
         </p>
       </div>
 

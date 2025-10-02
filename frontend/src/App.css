@@ -583,6 +583,15 @@ html, body {
   backface-visibility: hidden;
 }
 
+/* GSAP-controlled classes (no CSS animations) */
+.explore-static-gsap,
+.nothing-slide-up-gsap {
+  display: inline-block;
+  position: relative;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
 /* Responsive animation adjustments */
 @media (max-width: 768px) {
   .explore-static {
