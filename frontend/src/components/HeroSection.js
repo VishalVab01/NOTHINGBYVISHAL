@@ -97,7 +97,7 @@ const HeroSection = () => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          zIndex: 500,
+          zIndex: 30000,
           textAlign: 'center',
           pointerEvents: 'none',
           userSelect: 'none',
@@ -107,14 +107,18 @@ const HeroSection = () => {
         }}>
         <h2 style={{
           fontFamily: 'Nothing, Arial, sans-serif',
-          fontSize: '13px',
+          fontSize: '16px',
           fontWeight: 'normal',
           color: '#FFFFFF',
           textTransform: 'uppercase',
           letterSpacing: '3px',
           lineHeight: '1.2',
-          textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
-          margin: 0
+          textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)',
+          margin: 0,
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          padding: '8px 16px',
+          borderRadius: '4px',
+          border: '1px solid rgba(255,255,255,0.2)'
         }}>
           WE BELIEVE IN CREATIVITY AND TRANSPARENCY
         </h2>

@@ -39,12 +39,12 @@ if (typeof window !== 'undefined') {
                                                                                                   },
                                                                                                       {
                                                                                                             url: "https://customer-assets.emergentagent.com/job_smooth-scroll-17/artifacts/fn5fp6c5_Screenshot%202025-10-01%20021144.png",
-                                                                                                                  position: { top: '45%', right: '8%', rotate: '-8deg' },
+                                                                                                                  position: { top: '45%', right: '8%', rotate: '0deg' },
                                                                                                                         side: 'right'
                                                                                                                             },
                                                                                                                                 {
                                                                                                                                       url: "https://customer-assets.emergentagent.com/job_smooth-scroll-17/artifacts/8khxffu5_Screenshot%202025-10-01%20021200.png",
-                                                                                                                                            position: { top: '75%', right: '15%', rotate: '5deg' },
+                                                                                                                                            position: { top: '60%', right: '28%', rotate: '5deg' },
                                                                                                                                                   side: 'right'
                                                                                                                                                       }
                                                                                                                                                         ];
@@ -116,6 +116,56 @@ if (typeof window !== 'undefined') {
                                         y: 0, // No vertical movement
                                         opacity: Math.max(0, opacity),
                                         rotation: 0, // No rotation - stays straight
+                                        zIndex: 25000 + (index * 100),
+                                        ease: "power2.out"
+                                    });
+                                } else if (index === 3) {
+                                    // Custom animation for middle right image: scale up and move right
+                                    const scale = 1 + (progress * 1.8); // Start at 100% and grow to 2.8x
+                                    const moveDistance = progress * 400; // Move right (positive value)
+                                    const opacity = progress < 0.75 ? 1 : 1 - ((progress - 0.75) / 0.25); // Fade out later
+                                    
+                                    // Apply custom transformations for middle right image
+                                    gsap.set(imageRef, {
+                                        scale: scale,
+                                        x: moveDistance, // Move right in straight line
+                                        y: 0, // No vertical movement
+                                        opacity: Math.max(0, opacity),
+                                        rotation: 0, // No rotation - stays straight
+                                        zIndex: 25000 + (index * 100),
+                                        ease: "power2.out"
+                                    });
+                                } else if (index === 2) {
+                                    // Custom animation for first right image: slight zoom and move diagonally up-right off screen
+                                    const scale = 1 + (progress * 0.8); // Start at 100% and grow to 1.8x (slight zoom)
+                                    const moveDistanceX = progress * 500; // Move right off screen
+                                    const moveDistanceY = progress * -350; // Move up off screen (negative value for upward)
+                                    const opacity = progress < 0.65 ? 1 : 1 - ((progress - 0.65) / 0.35); // Fade out gradually
+                                    
+                                    // Apply custom transformations for first right image
+                                    gsap.set(imageRef, {
+                                        scale: scale,
+                                        x: moveDistanceX, // Move right off screen
+                                        y: moveDistanceY, // Move up off screen (diagonal path)
+                                        opacity: Math.max(0, opacity),
+                                        rotation: parseFloat(image.position.rotate), // Keep original rotation
+                                        zIndex: 25000 + (index * 100),
+                                        ease: "power2.out"
+                                    });
+                                } else if (index === 4) {
+                                    // Custom animation for third right image: move diagonally down-right off screen (no scaling)
+                                    const scale = 1; // Keep original size, no scaling
+                                    const moveDistanceX = progress * 600; // Move right off screen
+                                    const moveDistanceY = progress * 400; // Move down off screen
+                                    const opacity = progress < 0.6 ? 1 : 1 - ((progress - 0.6) / 0.4); // Fade out earlier
+                                    
+                                    // Apply custom transformations for third right image
+                                    gsap.set(imageRef, {
+                                        scale: scale,
+                                        x: moveDistanceX, // Move right off screen
+                                        y: moveDistanceY, // Move down off screen (diagonal path)
+                                        opacity: Math.max(0, opacity),
+                                        rotation: parseFloat(image.position.rotate), // Keep original rotation
                                         zIndex: 25000 + (index * 100),
                                         ease: "power2.out"
                                     });
