@@ -72,7 +72,7 @@ const VerticalScrollSection = () => {
       ref={sectionRef}
       style={{
         width: '100vw',
-        height: '200vh', // Tall section to allow for scroll animation
+        height: '120vh', // Reduced height to end after image animation
         position: 'relative',
         backgroundColor: '#1a1a1a', // Dark gray background
         display: 'flex',
@@ -123,88 +123,9 @@ const VerticalScrollSection = () => {
         </p>
       </div>
 
-      {/* Vertical Navigation Buttons - Appears when image is scaled */}
-      {scrollProgress > 0.4 && ( // Show buttons when scroll progress is more than 40%
-        <div style={{
-          position: 'fixed',
-          top: '55%', // Moved higher up
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '1.5rem',
-          zIndex: 50,
-          opacity: 1, // Always fully visible when container is shown
-          transition: 'opacity 0.5s ease'
-        }}>
-          {['HOME', 'NOTHING NEW', 'CMF', 'SHOP'].map((label, index) => (
-            <button
-              key={label}
-              className="vertical-nav-btn"
-              style={{
-                background: 'rgba(255, 255, 255, 0.1)', // Slight background for visibility
-                border: 'none',
-                color: '#FFFFFF',
-                fontFamily: 'Nothing, Arial, monospace',
-                fontSize: '10.0rem', // Increased font size
-                fontWeight: 'normal',
-                cursor: 'pointer',
-                padding: '30px 50px', // Increased padding to match larger font
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                transition: 'all 0.3s ease',
-                position: 'absolute',
-                opacity: 1,
-                transformOrigin: 'center',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.color = '#FF0000';
-                e.target.style.transform = 'scale(1.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.color = '#FFFFFF';
-                e.target.style.transform = 'scale(1)';
-              }}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-      )}
+      {/* Vertical Navigation Buttons - REMOVED as requested */}
 
-      {/* Additional content for extended scroll */}
-      <div style={{
-        maxWidth: '800px',
-        textAlign: 'center',
-        color: 'white',
-        fontSize: '1.1rem',
-        lineHeight: '1.7',
-        marginTop: '50vh',
-        fontFamily: 'Arial, sans-serif'
-      }}>
-        <h3 style={{
-          fontSize: '2rem',
-          marginBottom: '1.5rem',
-          fontFamily: 'Azonix, monospace',
-          letterSpacing: '0.1em',
-          color: '#888'
-        }}>
-          DISCOVER MORE
-        </h3>
-        
-        <p style={{ marginBottom: '2rem', color: '#ccc' }}>
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-          sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-        </p>
-        
-        <p style={{ color: '#ccc' }}>
-          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-          adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et 
-          dolore magnam aliquam quaerat voluptatem.
-        </p>
-      </div>
+      {/* Additional content removed - section now ends after image animation */}
     </div>
   );
 };

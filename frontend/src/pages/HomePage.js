@@ -5,6 +5,7 @@ import TechSection from "../components/TechSection";
 import TransparencySection from "../components/TransparencySection";
 import HorizontalScrollContainer from "../components/HorizontalScrollContainer";
 import VerticalScrollSection from "../components/VerticalScrollSection";
+import TranslucentPage from "../components/TranslucentPage";
 
 const HomePage = () => {
   return (
@@ -26,6 +27,9 @@ const HomePage = () => {
 
       {/* Vertical Scroll Section - Image animation from bottom to top */}
       <VerticalScrollSection />
+
+      {/* Translucent Page - Semi-transparent section */}
+      <TranslucentPage />
     </div>
   );
 };
