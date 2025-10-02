@@ -44,7 +44,7 @@ if (typeof window !== 'undefined') {
                                                                                                                             },
                                                                                                                                 {
                                                                                                                                       url: "https://customer-assets.emergentagent.com/job_smooth-scroll-17/artifacts/8khxffu5_Screenshot%202025-10-01%20021200.png",
-                                                                                                                                            position: { top: '60%', right: '28%', rotate: '5deg' },
+                                                                                                                                            position: { top: '60%', right: '28%', rotate: '-12deg' },
                                                                                                                                                   side: 'right'
                                                                                                                                                       }
                                                                                                                                                         ];
@@ -169,8 +169,31 @@ if (typeof window !== 'undefined') {
                                         zIndex: 25000 + (index * 100),
                                         ease: "power2.out"
                                     });
+                                } else if (index === 0) {
+                                    // Custom animation for first left image: minimal scaling, move left with rotation
+                                    const scale = 1 + (progress * 0.2); // Much smaller scaling (only 1.2x instead of 2.2x)
+                                    const moveDistance = progress * -300; // Move left
+                                    
+                                    // Much smoother fade out - start fading at 70% and fade gradually over 30%
+                                    let opacity;
+                                    if (progress < 0.7) {
+                                        opacity = 1;
+                                    } else {
+                                        const fadeProgress = (progress - 0.7) / 0.3;
+                                        opacity = 1 - Math.pow(fadeProgress, 2);
+                                    }
+                                    
+                                    // Apply custom transformations for first left image
+                                    gsap.set(imageRef, {
+                                        scale: scale,
+                                        x: moveDistance,
+                                        opacity: Math.max(0, opacity),
+                                        rotation: parseFloat(image.position.rotate) + (progress * -20), // Rotate left
+                                        zIndex: 25000 + (index * 100),
+                                        ease: "power2.out"
+                                    });
                                 } else {
-                                    // Default animation for all other images
+                                    // Default animation for remaining images
                                     const scale = 1 + (progress * 1.2);
                                     const moveDistance = progress * (isLeftSide ? -300 : 300);
                                     

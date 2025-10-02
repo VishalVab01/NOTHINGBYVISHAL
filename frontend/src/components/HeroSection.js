@@ -10,11 +10,10 @@ const HeroSection = () => {
   const nothingTextRef = useRef(null);
 
   useEffect(() => {
-    // Initialize center message as hidden and animate it in after 3 seconds
+    // Initialize center message with initial opacity 1 and animate position only
     if (centerMessageRef.current) {
-      gsap.set(centerMessageRef.current, { opacity: 0, y: 30 });
+      gsap.set(centerMessageRef.current, { opacity: 1, y: 30 });
       gsap.to(centerMessageRef.current, {
-        opacity: 1,
         y: 0,
         duration: 1,
         delay: 3,
@@ -89,47 +88,34 @@ const HeroSection = () => {
       {/* Scratch Card Video Background */}
       <ScratchCardVideo />
 
-      {/* Central Brand Message - Only visible when in hero section */}
-      <div 
-        ref={centerMessageRef}
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 30000,
-          textAlign: 'center',
-          pointerEvents: 'none',
-          userSelect: 'none',
-          opacity: isHeroVisible ? 1 : 0,
-          visibility: isHeroVisible ? 'visible' : 'hidden',
-          transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out'
-        }}>
-        <h2 style={{
-          fontFamily: 'Nothing, Arial, sans-serif',
-          fontSize: '16px',
-          fontWeight: 'normal',
-          color: '#FFFFFF',
-          textTransform: 'uppercase',
-          letterSpacing: '3px',
-          lineHeight: '1.2',
-          textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)',
-          margin: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          padding: '8px 16px',
-          borderRadius: '4px',
-          border: '1px solid rgba(255,255,255,0.2)'
-        }}>
-          WE BELIEVE IN CREATIVITY AND TRANSPARENCY
-        </h2>
+      {/* Simple center text that should definitely appear */}
+      <div style={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 9999999,
+        pointerEvents: 'none',
+        color: 'white',
+        fontSize: '16px',
+        fontFamily: 'Nothing, Arial, sans-serif',
+        textTransform: 'uppercase',
+        letterSpacing: '3px',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        padding: '8px 16px',
+        borderRadius: '4px',
+        border: '1px solid rgba(255,255,255,0.2)',
+        textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)'
+      }}>
+        WE BELIEVE IN CREATIVITY AND TRANSPARENCY
       </div>
 
       {/* Bottom Fixed Text - Split Animation - Only visible when in hero section */}
       <div 
         className="bottom-text"
         style={{
-          opacity: isHeroVisible ? 1 : 0,
-          visibility: isHeroVisible ? 'visible' : 'hidden',
+          opacity: 1,
+          visibility: 'visible',
           transition: 'opacity 0.3s ease-in-out, visibility 0.3s ease-in-out'
         }}
       >
