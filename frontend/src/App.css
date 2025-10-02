@@ -130,7 +130,37 @@ html, body {
   z-index: 9999;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  transition: all 0.4s ease-in-out;
+  transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+/* Animation States - Simplified for smooth expansion */
+.nothing-header.collapsed {
+  left: 50%;
+  right: 50%;
+  width: 2px;
+  height: 100px;
+  padding: 0;
+  border-radius: 2px;
+  background: rgba(128, 128, 128, 0.2);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.nothing-header.expanding,
+.nothing-header.expanded,
+.nothing-header.buttons-visible {
+  left: 20px;
+  right: 20px;
+  width: auto;
+  height: 80px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }
 
 .nothing-header:hover {
@@ -146,7 +176,21 @@ html, body {
   color: #FFFFFF;
   text-decoration: none;
   letter-spacing: 2px;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Brand animation states */
+.nothing-header.collapsed .nothing-brand,
+.nothing-header.expanding .nothing-brand {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.nothing-header.buttons-visible .nothing-brand {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .nothing-brand:hover {
@@ -158,6 +202,17 @@ html, body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.nothing-header.collapsed .nothing-nav-center,
+.nothing-header.expanding .nothing-nav-center {
+  opacity: 0;
+}
+
+.nothing-header.buttons-visible .nothing-nav-center {
+  opacity: 1;
 }
 
 .nothing-explore-btn {
@@ -170,12 +225,27 @@ html, body {
   font-size: 18px;
   font-weight: normal;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Explore button animation states */
+.nothing-header.collapsed .nothing-explore-btn,
+.nothing-header.expanding .nothing-explore-btn {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.nothing-header.buttons-visible .nothing-explore-btn {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
 }
 
 .nothing-explore-btn:hover {
@@ -183,10 +253,38 @@ html, body {
   background: var(--brand-hover);
 }
 
+/* Navigation Left */
+.nothing-nav-left {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.nothing-header.collapsed .nothing-nav-left,
+.nothing-header.expanding .nothing-nav-left {
+  opacity: 0;
+}
+
+.nothing-header.buttons-visible .nothing-nav-left {
+  opacity: 1;
+}
+
 /* Navigation Right */
 .nothing-nav-right {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.nothing-header.collapsed .nothing-nav-right,
+.nothing-header.expanding .nothing-nav-right {
+  opacity: 0;
+}
+
+.nothing-header.buttons-visible .nothing-nav-right {
+  opacity: 1;
 }
 
 .nothing-launch-btn {
@@ -199,12 +297,27 @@ html, body {
   font-size: 18px;
   font-weight: normal;
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Launch button animation states */
+.nothing-header.collapsed .nothing-launch-btn,
+.nothing-header.expanding .nothing-launch-btn {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.nothing-header.buttons-visible .nothing-launch-btn {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
 }
 
 .nothing-launch-btn:hover {
@@ -532,5 +645,25 @@ html, body {
     height: 80vh;
   }
 }
-/* App.css or index.css */
+/* Sticky Scroll Animation for Tech Section */
+.tech-sticky {
+  position: sticky !important;
+  top: 0;
+  z-index: 150;
+}
+
+/* Transparency Section Slide Up Animation */
+body.transparency-slide-up .transparency-wrapper {
+  transform: translateY(-100vh) !important;
+}
+
+/* Enhanced smooth animation for transparency section */
+.transparency-wrapper {
+  will-change: transform;
+}
+
+/* Ensure smooth scrolling performance */
+html {
+  scroll-behavior: smooth;
+}
 

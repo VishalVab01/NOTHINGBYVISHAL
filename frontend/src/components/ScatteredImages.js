@@ -24,6 +24,7 @@ if (typeof window !== 'undefined') {
                           url: "https://customer-assets.emergentagent.com/job_smooth-scroll-17/artifacts/fumq7h3r_Screenshot%202025-10-01%20021056.png",
                                 position: { top: '20%', left: '5%', rotate: '-12deg' },
                                       side: 'left'
+
                                           },
                                               {
                                                     url: "https://customer-assets.emergentagent.com/job_smooth-scroll-17/artifacts/w15cm22k_Screenshot%202025-10-01%20021120.png",
