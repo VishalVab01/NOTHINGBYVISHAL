@@ -101,10 +101,6 @@ const HeroSection = () => {
         fontFamily: 'Nothing, Arial, sans-serif',
         textTransform: 'uppercase',
         letterSpacing: '3px',
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        padding: '8px 16px',
-        borderRadius: '4px',
-        border: '1px solid rgba(255,255,255,0.2)',
         textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)'
       }}>
         WE BELIEVE IN CREATIVITY AND TRANSPARENCY

@@ -21,8 +21,8 @@ const SlantedBlur = () => {
       // Create scroll trigger for scroll down animation (main animation)
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: "top 50%", // Original trigger point for scroll down
-        end: "bottom 30%", 
+        start: "top 80%", // Earlier trigger point - starts 2 seconds earlier during scroll
+        end: "bottom 50%", // Also adjust end point to accommodate earlier start 
         onEnter: () => {
           // Animate letters in from right to left (scroll down)
           gsap.to(lettersRef.current, {
@@ -35,23 +35,23 @@ const SlantedBlur = () => {
           });
         },
         onLeave: () => {
-          // Animate letters out from left to right (scroll down past trigger)
+          // Animate letters out from right to left (opposite direction - letters exit from right to left)
           gsap.to(lettersRef.current, {
-            x: -200, // Exit to the left
+            x: 200, // Exit to the right
             opacity: 0,
             scale: 0.8,
             duration: 0.6,
-            stagger: 0.04, // Slightly faster exit
+            stagger: -0.04, // Negative stagger for right-to-left exit (right letters exit first)
             ease: "power3.in"
           });
         }
       });
 
-      // Create separate scroll trigger for scroll up animation (opposite animation) - triggers at 60%
+      // Create separate scroll trigger for scroll up animation (opposite animation) - triggers earlier
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: "top 60%", // Trigger at 60% for scroll up animations
-        end: "bottom 10%",
+        start: "top 90%", // Earlier trigger for scroll up animations to match new timing
+        end: "bottom 30%", // Adjust end point to match new timing
         onEnterBack: () => {
           // Animate letters in from left to right (scroll up back into view)
           gsap.fromTo(lettersRef.current, 
@@ -103,7 +103,7 @@ const SlantedBlur = () => {
       ref={containerRef}
       style={{
         position: 'absolute', // Use absolute positioning to cover entire page content
-        top: '-760px', // Start from the very top
+        top: '-845px', // Start from the very top
         left: '0', // Flush against left side of screen  
         width: '100vw', // Cover entire page width
         height: '110vh', // Cover entire page content (much taller than viewport)

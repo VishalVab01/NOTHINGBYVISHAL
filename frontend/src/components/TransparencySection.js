@@ -59,7 +59,7 @@ const TransparencySection = () => {
         position: 'relative',
         overflow: 'hidden',
         zIndex: 99, // High z-index to ensure it appears above other elements
-        marginTop: '-962px' // Move the image section up
+        marginTop: '-1060px' // Move the image section up
       }}>
         <img 
           src="/nothing_phone_image.jpg"
