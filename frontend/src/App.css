@@ -652,10 +652,10 @@ html, body {
   z-index: 150;
 }
 
-/* Transparency Section Slide Up Animation */
-body.transparency-slide-up .transparency-wrapper {
+/* Transparency Section Slide Up Animation - Now handled by scroll-responsive JS */
+/* body.transparency-slide-up .transparency-wrapper {
   transform: translateY(-100vh) !important;
-}
+} */
 
 /* Enhanced smooth animation for transparency section */
 .transparency-wrapper {

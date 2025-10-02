@@ -12,7 +12,7 @@ const TransparencySection = () => {
         position: 'relative',
         width: '100vw',
         transform: 'translateY(0)',
-        transition: 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        transition: 'none', // Removed fixed transition for smooth scroll-based animation
         zIndex: 200 // Higher z-index to slide over tech section
       }}
     >

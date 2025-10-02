@@ -26,7 +26,7 @@ const HomePage = () => {
           width: '100vw',
           height: '100vh',
           position: 'relative',
-          backgroundColor: 'black',
+          backgroundColor: 'white',
           zIndex: 100,
           marginTop: '-250px', // Adjust this value to move the section up
           display: 'flex',
@@ -39,7 +39,7 @@ const HomePage = () => {
           fontFamily: 'Azonix, monospace',
           fontSize: '28vw', // Responsive font size based on viewport width
           fontWeight: 'normal',
-          color: 'white',
+          color: 'black',
           textAlign: 'center',
           lineHeight: '0.8',
           letterSpacing: '0.1em',

@@ -2,26 +2,39 @@ import React, { useEffect, useRef } from "react";
 
 const TechSection = () => {
   const sectionRef = useRef(null);
-  const secondLineRef = useRef(null);
+  const lastLineRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current || !secondLineRef.current) return;
+      if (!sectionRef.current || !lastLineRef.current) return;
 
-      const secondLineRect = secondLineRef.current.getBoundingClientRect();
+      const lastLineRect = lastLineRef.current.getBoundingClientRect();
       const sectionRect = sectionRef.current.getBoundingClientRect();
       
-      // Check if user has scrolled past the second line
-      const isSecondLinePassedViewport = secondLineRect.top <= window.innerHeight * 0.3;
+      // Check if user has scrolled past the last line
+      const isLastLinePassedViewport = lastLineRect.bottom <= window.innerHeight * 0.4;
 
-      // Add/remove sticky class based on scroll position
-      if (isSecondLinePassedViewport) {
+      // Calculate smooth scroll progress for natural animation
+      const transparencyWrapper = document.querySelector('.transparency-wrapper');
+      
+      if (isLastLinePassedViewport && transparencyWrapper) {
         sectionRef.current.classList.add('tech-sticky');
-        // Trigger transparency section animation
-        document.body.classList.add('transparency-slide-up');
-      } else {
+        
+        // Calculate how far past the trigger point we've scrolled
+        const triggerPoint = window.innerHeight * 0.4;
+        const scrollPastTrigger = Math.max(0, triggerPoint - lastLineRect.bottom);
+        const maxScroll = window.innerHeight * 0.6; // Distance to complete animation
+        
+        // Calculate smooth progress (0 to 1)
+        const progress = Math.min(scrollPastTrigger / maxScroll, 1);
+        
+        // Apply smooth transform based on scroll progress
+        const translateY = -progress * 100; // Smooth percentage-based movement
+        transparencyWrapper.style.transform = `translateY(${translateY}vh)`;
+        
+      } else if (transparencyWrapper) {
         sectionRef.current.classList.remove('tech-sticky');
-        document.body.classList.remove('transparency-slide-up');
+        transparencyWrapper.style.transform = 'translateY(0)';
       }
     };
 
@@ -87,7 +100,6 @@ const TechSection = () => {
 
         {/* Rest of the text - Full Width below the image */}
         <div 
-          ref={secondLineRef}
           style={{
             position: 'absolute',
             top: '480px',       // Below the image
@@ -103,7 +115,7 @@ const TechSection = () => {
         >
           <p style={{ margin: '0', width: '100%' }}>
             EVERYTHING. EVERY LAYER EXPOSED WITH<br/>PRECISION, EVERY COMPONENT CRAFTED TO BE SEEN, NOT HIDDEN. IT'S A DEVICE BUILT TO CELEBRATE <span style={{ color: '#CCCCCC' }}>TRANSPARENCY</span> — SMTURNING<br/>
-            <span style={{ color: '#CCCCCC' }}>COMPLEXITY INTO CLARITY.</span>
+            <span ref={lastLineRef} style={{ color: '#CCCCCC' }}>COMPLEXITY INTO CLARITY.</span>
           </p>
         </div>
       </div>
