@@ -1,16 +1,14 @@
 import React from "react";
 
-const ComeToPlaySection = () => {
+const RedPage = () => {
   return (
     <div 
-      id="cometoplay"
+      id="redpage"
       style={{
         width: '100vw',
         height: '100vh',
         position: 'relative',
-        backgroundColor: 'black',
-        zIndex: 300,
-        marginTop: '0px', // No margin needed in horizontal container
+        backgroundColor: 'red',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -19,7 +17,7 @@ const ComeToPlaySection = () => {
     >
       <div style={{
         fontFamily: 'Azonix, monospace',
-        fontSize: '28vw', // Responsive font size based on viewport width
+        fontSize: '8vw',
         fontWeight: 'normal',
         color: 'white',
         textAlign: 'center',
@@ -27,10 +25,10 @@ const ComeToPlaySection = () => {
         letterSpacing: '0.1em',
         userSelect: 'none'
       }}>
-        COME
+        RED PAGE
       </div>
     </div>
   );
 };
 
-export default ComeToPlaySection;
+export default RedPage;

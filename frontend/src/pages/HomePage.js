@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection.js";
 import TechSection from "../components/TechSection";
 import TransparencySection from "../components/TransparencySection";
-import ComeToPlaySection from "../components/ComeToPlaySection";
+import HorizontalScrollContainer from "../components/HorizontalScrollContainer";
 
 const HomePage = () => {
   return (
@@ -20,8 +20,8 @@ const HomePage = () => {
       {/* Third Section - Transparency Section */}
       <TransparencySection />
 
-      {/* Fifth Section - Come to Play */}
-      <ComeToPlaySection />
+      {/* Horizontal Scroll Section - Come to Play, White Page, Red Page */}
+      <HorizontalScrollContainer />
     </div>
   );
 };

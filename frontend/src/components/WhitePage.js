@@ -1,16 +1,14 @@
 import React from "react";
 
-const ComeToPlaySection = () => {
+const WhitePage = () => {
   return (
     <div 
-      id="cometoplay"
+      id="whitepage"
       style={{
         width: '100vw',
         height: '100vh',
         position: 'relative',
-        backgroundColor: 'black',
-        zIndex: 300,
-        marginTop: '0px', // No margin needed in horizontal container
+        backgroundColor: 'white',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -19,18 +17,18 @@ const ComeToPlaySection = () => {
     >
       <div style={{
         fontFamily: 'Azonix, monospace',
-        fontSize: '28vw', // Responsive font size based on viewport width
+        fontSize: '8vw',
         fontWeight: 'normal',
-        color: 'white',
+        color: 'black',
         textAlign: 'center',
         lineHeight: '0.8',
         letterSpacing: '0.1em',
         userSelect: 'none'
       }}>
-        COME
+        WHITE PAGE
       </div>
     </div>
   );
 };
 
-export default ComeToPlaySection;
+export default WhitePage;
