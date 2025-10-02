@@ -539,20 +539,26 @@ html, body {
 }
 
 .explore-static {
-  /* Static part - no animation */
+  /* Animated part - slides up from below first */
   display: inline-block;
   position: relative;
   z-index: 2;
+  /* Start from below (100% down) */
+  transform: translateY(100%);
+  opacity: 0;
+  /* Animate up to normal position - starts immediately */
+  animation: slideUpFromBottom 2s ease-out 0s forwards;
 }
 
 .nothing-slide-up {
-  /* Animated part - slides up from below */
+  /* Animated part - slides up from below after EXPLORE */
   display: inline-block;
   position: relative;
   /* Start from below (100% down) */
   transform: translateY(100%);
-  /* Animate up to normal position */
-  animation: slideUpFromBottom 2s ease-out 0.5s forwards;
+  opacity: 0;
+  /* Animate up to normal position - starts after EXPLORE animation */
+  animation: slideUpFromBottom 2s ease-out 1s forwards;
 }
 
 /* Keyframe animation for sliding up */
@@ -571,6 +577,7 @@ html, body {
 }
 
 /* Ensure smooth animation performance */
+.explore-static,
 .nothing-slide-up {
   will-change: transform, opacity;
   backface-visibility: hidden;
@@ -578,14 +585,22 @@ html, body {
 
 /* Responsive animation adjustments */
 @media (max-width: 768px) {
+  .explore-static {
+    animation-duration: 1.8s;
+  }
   .nothing-slide-up {
     animation-duration: 1.8s;
+    animation-delay: 0.8s;
   }
 }
 
 @media (max-width: 480px) {
+  .explore-static {
+    animation-duration: 1.5s;
+  }
   .nothing-slide-up {
     animation-duration: 1.5s;
+    animation-delay: 0.6s;
   }
 }
 

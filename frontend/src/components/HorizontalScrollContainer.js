@@ -77,7 +77,7 @@ const HorizontalScrollContainer = () => {
         style={{ 
           height: '400vh', // Create scroll distance for horizontal animation (4 pages)
           position: 'relative',
-          marginTop: '-630px' // Connect with previous section
+          marginTop: '-100px' // Reduced margin to account for white section
         }}
       >
         {/* Fixed container that gets pinned - only visible when in scroll range */}
