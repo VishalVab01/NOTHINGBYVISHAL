@@ -10,10 +10,11 @@ const HeroSection = () => {
   const nothingTextRef = useRef(null);
 
   useEffect(() => {
-    // Initialize center message with initial opacity 1 and animate position only
+    // Initialize center message hidden and animate both opacity and position after 3 second delay
     if (centerMessageRef.current) {
-      gsap.set(centerMessageRef.current, { opacity: 1, y: 30 });
+      gsap.set(centerMessageRef.current, { opacity: 0, y: 30 });
       gsap.to(centerMessageRef.current, {
+        opacity: 1,
         y: 0,
         duration: 1,
         delay: 3,
@@ -26,9 +27,9 @@ const HeroSection = () => {
 
     // Initialize bottom text animations with 1 second delay and faster animations
     if (exploreTextRef.current && nothingTextRef.current) {
-      // Set initial states - both hidden and positioned below
+      // Set initial states - both hidden and positioned way below (off-screen)
       gsap.set([exploreTextRef.current, nothingTextRef.current], {
-        y: 100,
+        y: 300, // Increased to 300px to ensure text starts completely off-screen on all devices
         opacity: 0
       });
 
@@ -118,6 +119,47 @@ const HeroSection = () => {
     };
   }, []);
 
+  // Fade out effect for bottom EXPLORENOTHING text
+  useEffect(() => {
+    const handleBottomTextScroll = () => {
+      if (!exploreTextRef.current || !nothingTextRef.current) return;
+      
+      // Get scroll position
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate opacity based on scroll position
+      // Start fading out after scrolling 20% of viewport height
+      const fadeStartScroll = windowHeight * 0.2;
+      // Complete fade out by 100% of viewport height
+      const fadeEndScroll = windowHeight * 1.0;
+      
+      let opacity = 1;
+      
+      if (scrollTop > fadeStartScroll) {
+        const fadeRange = fadeEndScroll - fadeStartScroll;
+        const scrollInRange = scrollTop - fadeStartScroll;
+        opacity = Math.max(0, 1 - (scrollInRange / fadeRange));
+      }
+      
+      // Apply opacity with GSAP for smooth animation
+      gsap.set([exploreTextRef.current, nothingTextRef.current], {
+        opacity: opacity,
+        ease: "none"
+      });
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleBottomTextScroll, { passive: true });
+    
+    // Call once to set initial state
+    handleBottomTextScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleBottomTextScroll);
+    };
+  }, []);
+
   return (
     <div 
       ref={heroRef}
@@ -147,7 +189,13 @@ const HeroSection = () => {
           willChange: 'transform, opacity' // Optimize for animation performance
         }}
       >
-        WE BELIEVE IN CREATIVITY AND TRANSPARENCY
+        WE BELIEVE IN CREATIVITY AND{' '}
+        <span style={{
+          fontSize: '20px',
+          fontWeight: 'bold'
+        }}>
+          TRANSPARENCY
+        </span>
       </div>
 
       {/* Bottom Fixed Text - Split Animation - Only visible when in hero section */}

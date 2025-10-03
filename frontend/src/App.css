@@ -251,7 +251,6 @@ html, body {
 
 .nothing-explore-btn:hover {
   color: var(--brand-primary);
-  background: var(--brand-hover);
 }
 
 /* Navigation Left */
@@ -323,7 +322,6 @@ html, body {
 
 .nothing-launch-btn:hover {
   color: var(--brand-primary);
-  background: var(--brand-hover);
 }
 
 /* Vertical Navigation Buttons */
