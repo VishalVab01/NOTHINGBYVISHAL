@@ -77,7 +77,7 @@ const VerticalScrollSection = () => {
         width: '100vw',
         height: '120vh', // Reduced height to end after image animation
         position: 'relative',
-        backgroundColor: '#1a1a1a', // Dark gray background
+        backgroundColor: '#000000ff', // Dark gray background
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
