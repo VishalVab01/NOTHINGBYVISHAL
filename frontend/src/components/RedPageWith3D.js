@@ -340,7 +340,16 @@ const FlappyBird = () => {
   );
 };
 
-const RedPageWith3D = () => {
+const RedPageWith3D = ({ 
+  headingTop = '10%', 
+  headingLeft = '50%', 
+  headingTransform = 'translateX(-50%)',
+  headingFontSize = '4rem',
+  headingColor = '#FFFFFF',
+  headingZIndex = 1001,
+  headingLetterSpacing = '0.2em',
+  headingOpacity = 1 
+}) => {
   return (
     <div style={{
       width: '100vw',
@@ -353,6 +362,29 @@ const RedPageWith3D = () => {
       zIndex: 250, // Higher z-index to overlap transparency section (zIndex: 200)
       marginTop: '-80vh' // Move up to overlap the transparency section completely
     }}>
+      {/* StopAtNothing Heading */}
+      <h1 style={{
+        position: 'absolute',
+        top: -10,
+        left: headingLeft,
+        transform: headingTransform,
+        fontFamily: 'Nothing, Arial, sans-serif',
+        fontSize: headingFontSize,
+        color: headingColor,
+        letterSpacing: headingLetterSpacing,
+        textAlign: 'center',
+        margin: 0,
+        padding: 0,
+        zIndex: headingZIndex,
+        opacity: headingOpacity,
+        userSelect: 'none',
+        pointerEvents: 'none', // Ensure it doesn't interfere with game interactions
+        textShadow: '0 0 20px rgba(255, 255, 255, 0.5)', // Subtle glow effect
+        fontWeight: 'normal'
+      }}>
+        # StopAtNothing
+      </h1>
+      
       {/* Flappy Bird Game - Full Screen */}
       <FlappyBird />
     </div>
