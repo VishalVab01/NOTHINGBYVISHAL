@@ -17,7 +17,10 @@ const HeroSection = () => {
         y: 0,
         duration: 1,
         delay: 3,
-        ease: "power2.out"
+        ease: "power2.out",
+        onComplete: () => {
+          // After initial animation, the parallax scroll effect takes over
+        }
       });
     }
 
@@ -78,6 +81,43 @@ const HeroSection = () => {
     };
   }, []);
 
+  // Parallax effect for center text
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!centerMessageRef.current) return;
+      
+      // Get scroll position
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate parallax offset (text moves faster than scroll)
+      const parallaxSpeed = 1.5; // Multiplier for how fast the text moves
+      const parallaxOffset = scrollTop * parallaxSpeed;
+      
+      // Calculate opacity based on scroll position
+      // Fade out as the text moves up
+      const maxScroll = windowHeight * 0.8; // Text fully fades by 80% of viewport height
+      const opacity = Math.max(0, 1 - (scrollTop / maxScroll));
+      
+      // Apply transforms with GSAP for smooth animation
+      gsap.set(centerMessageRef.current, {
+        y: -parallaxOffset,
+        opacity: opacity,
+        ease: "none"
+      });
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Call once to set initial state
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div 
       ref={heroRef}
@@ -88,21 +128,25 @@ const HeroSection = () => {
       {/* Scratch Card Video Background */}
       <ScratchCardVideo />
 
-      {/* Simple center text that should definitely appear */}
-      <div style={{
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        zIndex: 5,
-        pointerEvents: 'none',
-        color: 'white',
-        fontSize: '16px',
-        fontFamily: 'Nothing, Arial, sans-serif',
-        textTransform: 'uppercase',
-        letterSpacing: '3px',
-        textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)'
-      }}>
+      {/* Center text with parallax effect */}
+      <div 
+        ref={centerMessageRef}
+        style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 5,
+          pointerEvents: 'none',
+          color: 'white',
+          fontSize: '16px',
+          fontFamily: 'Nothing, Arial, sans-serif',
+          textTransform: 'uppercase',
+          letterSpacing: '3px',
+          textShadow: '2px 2px 8px rgba(0,0,0,0.9), 0 0 16px rgba(0,0,0,0.7)',
+          willChange: 'transform, opacity' // Optimize for animation performance
+        }}
+      >
         WE BELIEVE IN CREATIVITY AND TRANSPARENCY
       </div>
 

@@ -33,19 +33,7 @@ const TransparencySection = () => {
           textAlign: 'center',
           width: '100%'
         }}>
-          {/* Main TRANSPARENCY Heading - only this, nothing else */}
-          <h1 style={{
-            fontFamily: 'Azonix-new, Azonix, Arial, sans-serif',
-            fontSize: 'clamp(60px, 8vw, 120px)',
-            lineHeight: '1.1',
-            fontWeight: 'normal',
-            color: '#FF6B35', // Orange color
-            margin: '0',
-            textTransform: 'uppercase',
-            letterSpacing: '8px'
-          }}>
-            TRANSPARENCY
-          </h1>
+        
         </div>
       </div>
 
@@ -68,8 +56,9 @@ const TransparencySection = () => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
+            objectPosition: 'center top', // Shift image to show more of the top part
             display: 'block',
-            clipPath: 'polygon(0% 0%, 100% 30%, 100% 100%, 0% 100%)' // Keep the 30% slant on right side
+            clipPath: 'polygon(0% 0%, 100% 30%, 100% 75%, 0% 75%)' // Crop from bottom in straight line
           }}
         />
       </div>
