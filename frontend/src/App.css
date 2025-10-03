@@ -613,6 +613,175 @@ html, body {
   }
 }
 
+/* Shop Page Styles */
+.shop-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.shop-content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Shop Text Section with Positioning Controls */
+.shop-text-section {
+  /* Base positioning - can be overridden with inline styles */
+  position: absolute;
+  z-index: 10;
+}
+
+/* Positioning utility classes for easy adjustment */
+.position-top-left { top: 200px; left: 80px; }
+.position-top-center { top: 200px; left: 50%; transform: translateX(-50%); }
+.position-top-right { top: 200px; right: 80px; }
+.position-center-left { top: 50%; left: 80px; transform: translateY(-50%); }
+.position-center-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.position-center-right { top: 50%; right: 80px; transform: translateY(-50%); }
+.position-bottom-left { bottom: 200px; left: 80px; }
+.position-bottom-center { bottom: 200px; left: 50%; transform: translateX(-50%); }
+.position-bottom-right { bottom: 200px; right: 80px; }
+
+/* Fine-tuning classes for micro-adjustments */
+.adjust-top-10 { top: calc(var(--current-top, 200px) - 10px) !important; }
+.adjust-top-20 { top: calc(var(--current-top, 200px) - 20px) !important; }
+.adjust-top-50 { top: calc(var(--current-top, 200px) - 50px) !important; }
+.adjust-top-100 { top: calc(var(--current-top, 200px) - 100px) !important; }
+
+.adjust-left-10 { left: calc(var(--current-left, 80px) - 10px) !important; }
+.adjust-left-20 { left: calc(var(--current-left, 80px) - 20px) !important; }
+.adjust-left-50 { left: calc(var(--current-left, 80px) - 50px) !important; }
+.adjust-left-100 { left: calc(var(--current-left, 80px) - 100px) !important; }
+
+.adjust-right-10 { right: calc(var(--current-right, 80px) - 10px) !important; }
+.adjust-right-20 { right: calc(var(--current-right, 80px) - 20px) !important; }
+.adjust-right-50 { right: calc(var(--current-right, 80px) - 50px) !important; }
+.adjust-right-100 { right: calc(var(--current-right, 80px) - 100px) !important; }
+
+/* Main heading styles */
+.shop-main-heading {
+  font-family: 'Azonix', 'Azonix-new', Arial, sans-serif !important;
+  color: #FFFFFF;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Description text styles */
+.shop-description {
+  font-family: 'Nothing', Arial, sans-serif;
+  color: #888888;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Size variations for heading */
+.heading-size-small { font-size: 2.5rem !important; }
+.heading-size-medium { font-size: 3.5rem !important; }
+.heading-size-large { font-size: 4rem !important; }
+.heading-size-xl { font-size: 5rem !important; }
+.heading-size-xxl { font-size: 6rem !important; }
+
+/* Size variations for description */
+.desc-size-small { font-size: 0.875rem !important; }
+.desc-size-medium { font-size: 1rem !important; }
+.desc-size-large { font-size: 1.125rem !important; }
+.desc-size-xl { font-size: 1.25rem !important; }
+
+/* Spacing adjustments */
+.spacing-tight { margin-top: 1rem !important; }
+.spacing-normal { margin-top: 2rem !important; }
+.spacing-loose { margin-top: 3rem !important; }
+.spacing-extra-loose { margin-top: 4rem !important; }
+
+/* Responsive adjustments for shop page */
+@media (max-width: 768px) {
+  .shop-text-section {
+    left: 40px !important;
+    right: 40px !important;
+  }
+  
+  .shop-main-heading {
+    font-size: 2.5rem !important;
+  }
+  
+  .shop-description {
+    font-size: 0.9rem !important;
+    max-width: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-text-section {
+    left: 20px !important;
+    right: 20px !important;
+  }
+  
+  .shop-main-heading {
+    font-size: 2rem !important;
+  }
+  
+  .shop-description {
+    font-size: 0.8rem !important;
+    max-width: 250px !important;
+  }
+}
+
+/* Product Showcase Responsive Styles */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    padding: 3rem 4rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    padding: 3rem 2rem !important;
+  }
+  
+  .product-nav-bar {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    height: auto !important;
+    padding: 1rem !important;
+    gap: 1rem !important;
+  }
+  
+  .nav-category-btn {
+    font-size: 1.2rem !important;
+    padding: 8px 16px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 2rem 1rem !important;
+  }
+  
+  .product-nav-bar {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    padding: 1rem !important;
+  }
+  
+  .nav-category-btn {
+    font-size: 1rem !important;
+    padding: 12px 20px !important;
+    width: 100% !important;
+  }
+}
+
 /* Scroll Zoom Images Animation */
 .scroll-zoom-container {
   position: absolute;

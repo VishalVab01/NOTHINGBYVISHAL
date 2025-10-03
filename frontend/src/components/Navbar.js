@@ -34,14 +34,44 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Center - Explore Button */}
+      {/* Center - Navigation Buttons */}
       <div className="nothing-nav-center">
-        <button 
-          className="nothing-explore-btn"
-          onClick={() => navigate('/')}
-        >
-          EXPLORE NOTHING
-        </button>
+        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <button 
+            className="nothing-explore-btn"
+            onClick={() => navigate('/')}
+          >
+            EXPLORE NOTHING
+          </button>
+          <button 
+            className="nothing-shop-btn"
+            onClick={() => navigate('/shop')}
+            style={{
+              background: 'transparent',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '0px',
+              padding: '14px 24px',
+              fontFamily: 'Nothing, Arial, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'normal',
+              cursor: 'pointer',
+              transition: 'all 0.5s ease-in-out',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              letterSpacing: '1px',
+              opacity: animationPhase === 'buttons-visible' ? 1 : 0,
+              transform: animationPhase === 'buttons-visible' ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '0.15s'
+            }}
+            onMouseOver={(e) => e.target.style.color = '#FF0000'}
+            onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+          >
+            SHOP
+          </button>
+        </div>
       </div>
 
       {/* Right - New Launch Button */}
