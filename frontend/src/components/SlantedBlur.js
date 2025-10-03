@@ -21,16 +21,16 @@ const SlantedBlur = () => {
       // Create scroll trigger for scroll down animation (main animation)
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: "top 80%", // Earlier trigger point - starts 2 seconds earlier during scroll
-        end: "bottom 50%", // Also adjust end point to accommodate earlier start 
+        start: "top 60%", // Earlier trigger point - starts 2 seconds earlier during scroll
+        end: "bottom 30%", // Also adjust end point to accommodate earlier start 
         onEnter: () => {
           // Animate letters in from right to left (scroll down)
           gsap.to(lettersRef.current, {
             x: 0,
             opacity: 1,
             scale: 1,
-            duration: 0.8,
-            stagger: 0.05, // Fast stagger - each letter follows 0.05s after previous
+            duration: 1.0,
+            stagger: 0.10, // Fast stagger - each letter follows 0.05s after previous
             ease: "power3.out"
           });
         },
@@ -103,7 +103,7 @@ const SlantedBlur = () => {
       ref={containerRef}
       style={{
         position: 'absolute', // Use absolute positioning to cover entire page content
-        top: '-845px', // Start from the very top
+        top: '-760px', // Start from the very top
         left: '0', // Flush against left side of screen  
         width: '100vw', // Cover entire page width
         height: '110vh', // Cover entire page content (much taller than viewport)

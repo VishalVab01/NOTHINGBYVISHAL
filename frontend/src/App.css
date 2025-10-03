@@ -480,7 +480,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 50;
+  z-index: 6;
   pointer-events: none;
   user-select: none;
   width: 100vw; /* Full width to ensure text doesn't get cut off */

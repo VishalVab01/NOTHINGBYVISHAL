@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection.js";
 import TechSection from "../components/TechSection";
 import TransparencySection from "../components/TransparencySection";
+import RedPageWith3D from "../components/RedPageWith3D";
 import HorizontalScrollContainer from "../components/HorizontalScrollContainer";
 import VerticalScrollSection from "../components/VerticalScrollSection";
 import TranslucentPage from "../components/TranslucentPage";
@@ -25,6 +26,9 @@ const HomePage = () => {
 
       {/* Third Section - Transparency Section */}
       <TransparencySection />
+
+      {/* Red Page with 3D Model - Just below transparency section image */}
+      <RedPageWith3D />
 
       {/* Horizontal Scroll Section - Come to Play, White Page, Red Page */}
       <HorizontalScrollContainer />

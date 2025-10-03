@@ -75,7 +75,7 @@ const HorizontalScrollContainer = () => {
       <div 
         ref={triggerRef}
         style={{ 
-          height: '400vh', // Create scroll distance for horizontal animation (4 pages)
+          height: '250vh', // Reduced scroll distance for horizontal animation
           position: 'relative',
           marginTop: '-100px' // Reduced margin to account for white section
         }}

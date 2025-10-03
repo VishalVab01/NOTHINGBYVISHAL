@@ -6,6 +6,7 @@ const VerticalScrollSection = () => {
   const imageRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [animationPhase, setAnimationPhase] = useState('normal'); // 'normal', 'scaling', 'scaled'
+  const lastProgressRef = useRef(0); // Track previous progress for scroll direction
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,8 @@ const VerticalScrollSection = () => {
       if (sectionTop <= windowHeight && sectionTop >= -sectionHeight) {
         // Progress from 0 (bottom of screen) to 1 (top of screen)
         const progress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+        const isScrollingUp = progress < lastProgressRef.current;
+        lastProgressRef.current = progress;
         setScrollProgress(progress);
 
         // Handle different animation phases
@@ -48,14 +51,14 @@ const VerticalScrollSection = () => {
           }
         }
         
-        // Reset animation if user scrolls back up significantly
-        if (progress < 0.2 && (animationPhase === 'scaling' || animationPhase === 'scaled')) {
+        // Reset animation if user scrolls back up significantly - more responsive trigger
+        if (progress < 0.35 && (animationPhase === 'scaling' || animationPhase === 'scaled')) {
           setAnimationPhase('normal');
           gsap.to(imageElement, {
             scale: 1,
             y: 0,
-            duration: 0.8,
-            ease: "power2.inOut"
+            duration: isScrollingUp ? 0.15 : 0.2, // Even faster when actively scrolling up
+            ease: "power3.out" // More aggressive easing for instant feel
           });
         }
       }
