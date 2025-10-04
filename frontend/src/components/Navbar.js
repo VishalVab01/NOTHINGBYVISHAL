@@ -348,20 +348,17 @@ const Navbar = () => {
                 transition: 'all 0.2s ease',
                 opacity: 0, // Initial hidden state
                 transform: 'scale(1)',
-                textShadow: 'none',
-                borderBottom: '2px solid transparent'
+                textShadow: 'none'
               }}
               onMouseOver={(e) => {
                 e.target.style.color = '#FF0000';
                 e.target.style.transform = 'scale(1.05)';
                 e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
-                e.target.style.borderBottom = '2px solid #FF0000';
               }}
               onMouseOut={(e) => {
                 e.target.style.color = '#FFFFFF';
                 e.target.style.transform = 'scale(1)';
                 e.target.style.textShadow = 'none';
-                e.target.style.borderBottom = '2px solid transparent';
               }}
               data-testid="menu-home-btn"
             >
@@ -385,20 +382,17 @@ const Navbar = () => {
                 whiteSpace: 'nowrap', // Prevent line breaks
                 opacity: 0, // Initial hidden state
                 transform: 'scale(1)',
-                textShadow: 'none',
-                borderBottom: '2px solid transparent'
+                textShadow: 'none'
               }}
               onMouseOver={(e) => {
                 e.target.style.color = '#FF0000';
                 e.target.style.transform = 'scale(1.05)';
                 e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
-                e.target.style.borderBottom = '2px solid #FF0000';
               }}
               onMouseOut={(e) => {
                 e.target.style.color = '#FFFFFF';
                 e.target.style.transform = 'scale(1)';
                 e.target.style.textShadow = 'none';
-                e.target.style.borderBottom = '2px solid transparent';
               }}
               data-testid="menu-nothing-new-btn"
             >
@@ -421,20 +415,17 @@ const Navbar = () => {
                 transition: 'all 0.2s ease',
                 opacity: 0, // Initial hidden state
                 transform: 'scale(1)',
-                textShadow: 'none',
-                borderBottom: '2px solid transparent'
+                textShadow: 'none'
               }}
               onMouseOver={(e) => {
                 e.target.style.color = '#FF0000';
                 e.target.style.transform = 'scale(1.05)';
                 e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
-                e.target.style.borderBottom = '2px solid #FF0000';
               }}
               onMouseOut={(e) => {
                 e.target.style.color = '#FFFFFF';
                 e.target.style.transform = 'scale(1)';
                 e.target.style.textShadow = 'none';
-                e.target.style.borderBottom = '2px solid transparent';
               }}
               data-testid="menu-shop-btn"
             >
@@ -457,20 +448,17 @@ const Navbar = () => {
                 transition: 'all 0.2s ease',
                 opacity: 0, // Initial hidden state
                 transform: 'scale(1)',
-                textShadow: 'none',
-                borderBottom: '2px solid transparent'
+                textShadow: 'none'
               }}
               onMouseOver={(e) => {
                 e.target.style.color = '#FF0000';
                 e.target.style.transform = 'scale(1.05)';
                 e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
-                e.target.style.borderBottom = '2px solid #FF0000';
               }}
               onMouseOut={(e) => {
                 e.target.style.color = '#FFFFFF';
                 e.target.style.transform = 'scale(1)';
                 e.target.style.textShadow = 'none';
-                e.target.style.borderBottom = '2px solid transparent';
               }}
               data-testid="menu-cmf-btn"
             >
