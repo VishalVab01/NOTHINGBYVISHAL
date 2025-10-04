@@ -103,7 +103,7 @@ const SlantedBlur = () => {
       ref={containerRef}
       style={{
         position: 'absolute', // Use absolute positioning to cover entire page content
-        top: '-840px', // Start from the very top
+        top: '-761px', // Start from the very top
         left: '0', // Flush against left side of screen  
         width: '100vw', // Cover entire page width
         height: '110vh', // Cover entire page content (much taller than viewport)

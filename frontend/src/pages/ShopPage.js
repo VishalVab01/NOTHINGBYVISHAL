@@ -247,53 +247,45 @@ const ShopPage = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '3rem',
-            padding: '4rem 6rem',
-            maxWidth: '1400px',
+            gap: '1.5rem',
+            padding: '2rem 1rem',
+            maxWidth: '2200px',
             margin: '0 auto'
           }}
         >
           
-          {/* Product Card 1 - Phone 3 (BLACK) */}
+          {/* Product Image 1 - Phone 3 (BLACK) */}
           <div 
-            className="product-card"
-            data-testid="product-card-phone3-black"
+            className="product-image"
+            data-testid="product-image-phone3-black"
             style={{
-              background: 'transparent',
-              textAlign: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-10px)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0px)';
-            }}
-          >
-            <div style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #1a1a1a, #2d2d2d)',
-              borderRadius: '20px',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1.5rem',
-              overflow: 'hidden',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <img 
-                src="https://images.unsplash.com/photo-1661962399580-80301d32d791?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxOb3RoaW5nJTIwcGhvbmV8ZW58MHx8fHwxNzU5NTA2Njg4fDA&ixlib=rb-4.1.0&q=85"
-                alt="Nothing Phone 3 Black"
-                style={{
-                  width: '80%',
-                  height: '80%',
-                  objectFit: 'cover',
-                  borderRadius: '15px'
-                }}
-              />
-            </div>
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_4603d84d-4972-4b1a-9d61-dc820b08f492/artifacts/jjm3gynr_Phone3Black.png"
+              alt="Nothing Phone 3 Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
             <h3 style={{
               fontFamily: 'Azonix, Arial, sans-serif',
               color: '#FFFFFF',
@@ -314,46 +306,38 @@ const ShopPage = () => {
             </p>
           </div>
           
-          {/* Product Card 2 - Phone 3 (WHITE) */}
+          {/* Product Image 2 - Phone 3 (WHITE) */}
           <div 
-            className="product-card"
-            data-testid="product-card-phone3-white"
+            className="product-image"
+            data-testid="product-image-phone3-white"
             style={{
-              background: 'transparent',
-              textAlign: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-10px)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0px)';
-            }}
-          >
-            <div style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #f8f8f8, #e8e8e8)',
-              borderRadius: '20px',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1.5rem',
-              overflow: 'hidden',
-              border: '1px solid rgba(255, 255, 255, 0.2)'
-            }}>
-              <img 
-                src="https://images.unsplash.com/photo-1664700651198-42cf8d382dc3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxOb3RoaW5nJTIwcGhvbmV8ZW58MHx8fHwxNzU5NTA2Njg4fDA&ixlib=rb-4.1.0&q=85"
-                alt="Nothing Phone 3 White"
-                style={{
-                  width: '80%',
-                  height: '80%',
-                  objectFit: 'cover',
-                  borderRadius: '15px'
-                }}
-              />
-            </div>
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_4603d84d-4972-4b1a-9d61-dc820b08f492/artifacts/b2ymn780_Phone3White.png"
+              alt="Nothing Phone 3 White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
             <h3 style={{
               fontFamily: 'Azonix, Arial, sans-serif',
               color: '#FFFFFF',
@@ -374,46 +358,38 @@ const ShopPage = () => {
             </p>
           </div>
           
-          {/* Product Card 3 - Phone 3a Pro (BLACK) */}
+          {/* Product Image 3 - Phone 3a Pro (BLACK) */}
           <div 
-            className="product-card"
-            data-testid="product-card-phone3a-black"
+            className="product-image"
+            data-testid="product-image-phone3a-black"
             style={{
-              background: 'transparent',
-              textAlign: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-10px)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0px)';
-            }}
-          >
-            <div style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #0a0a0a, #1f1f1f)',
-              borderRadius: '20px',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1.5rem',
-              overflow: 'hidden',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <img 
-                src="https://images.unsplash.com/photo-1663868891817-8853b9eb83f0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHxOb3RoaW5nJTIwcGhvbmV8ZW58MHx8fHwxNzU5NTA2Njg4fDA&ixlib=rb-4.1.0&q=85"
-                alt="Nothing Phone 3a Pro Black"
-                style={{
-                  width: '80%',
-                  height: '80%',
-                  objectFit: 'cover',
-                  borderRadius: '15px'
-                }}
-              />
-            </div>
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_4603d84d-4972-4b1a-9d61-dc820b08f492/artifacts/jawoei6i_Phone3aProBlack.png"
+              alt="Nothing Phone 3a Pro Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
             <h3 style={{
               fontFamily: 'Azonix, Arial, sans-serif',
               color: '#FFFFFF',
@@ -434,46 +410,38 @@ const ShopPage = () => {
             </p>
           </div>
           
-          {/* Product Card 4 - Phone 3a Pro (GREY) */}
+          {/* Product Image 4 - Phone 3a Pro (GREY) */}
           <div 
-            className="product-card"
-            data-testid="product-card-phone3a-grey"
+            className="product-image"
+            data-testid="product-image-phone3a-grey"
             style={{
-              background: 'transparent',
-              textAlign: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-10px)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0px)';
-            }}
-          >
-            <div style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #4a4a4a, #6a6a6a)',
-              borderRadius: '20px',
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '1.5rem',
-              overflow: 'hidden',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <img 
-                src="https://images.pexels.com/photos/14398223/pexels-photo-14398223.jpeg"
-                alt="Nothing Phone 3a Pro Grey"
-                style={{
-                  width: '80%',
-                  height: '80%',
-                  objectFit: 'cover',
-                  borderRadius: '15px'
-                }}
-              />
-            </div>
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_4603d84d-4972-4b1a-9d61-dc820b08f492/artifacts/r2ql0kd7_Phone3aProGrey.png"
+              alt="Nothing Phone 3a Pro Grey"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
             <h3 style={{
               fontFamily: 'Azonix, Arial, sans-serif',
               color: '#FFFFFF',
@@ -491,6 +459,422 @@ const ShopPage = () => {
               margin: 0
             }}>
               FROM ₹31,999
+            </p>
+          </div>
+          
+          {/* Product Image 5 - Phone 3a (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-phone3a-black2"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/i9vlfaid_Phone3aBlack.png"
+              alt="Nothing Phone 3a Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Phone 3a (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹31,999
+            </p>
+          </div>
+          
+          {/* Product Image 6 - Phone 3a (BLUE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-phone3a-blue"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/8c9fc1oz_Phone3aBlue.png"
+              alt="Nothing Phone 3a Blue"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Phone 3a (BLUE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹31,999
+            </p>
+          </div>
+          
+          {/* Product Image 7 - Phone 3a Pro (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-phone3a-pro-black2"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/fm33ta3t_Phone3aProBlack.png"
+              alt="Nothing Phone 3a Pro Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Phone 3a Pro (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹31,999
+            </p>
+          </div>
+          
+          {/* Product Image 8 - Phone 3a (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-phone3a-white2"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/o31sfl0g_Phone3aWhite.png"
+              alt="Nothing Phone 3a White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Phone 3a (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹31,999
+            </p>
+          </div>
+          
+          {/* Product Image 9 - CMF Phone 2 Pro (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-phone2-pro-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/1gdxshsw_CMFPhone2ProBlack.png"
+              alt="CMF Phone 2 Pro Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Phone 2 Pro (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹25,999
+            </p>
+          </div>
+          
+          {/* Product Image 10 - Phone 2a (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-phone2a-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/nwd2e5qi_Phone2aBlack.png"
+              alt="Nothing Phone 2a Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Phone 2a (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹29,999
+            </p>
+          </div>
+          
+          {/* Product Image 11 - Phone 2a (MILK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-phone2a-milk"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/7getz41t_Phone2aMilk.png"
+              alt="Nothing Phone 2a Milk"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Phone 2a (MILK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹29,999
+            </p>
+          </div>
+          
+          {/* Product Image 12 - Phone 2a Plus (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-phone2a-plus-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_product-display-16/artifacts/2g07i5fn_Phone2aPlusBlack.png"
+              alt="Nothing Phone 2a Plus Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '450px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Azonix, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1.2rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Phone 2a Plus (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '1rem',
+              margin: 0
+            }}>
+              FROM ₹29,999
             </p>
           </div>
           
