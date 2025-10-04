@@ -53,13 +53,13 @@ const Navbar = () => {
         y: 50
       });
       
-      // Animate expansion to full screen
+      // Animate expansion to 95% of screen with rounded corners
       gsap.to(expandedMenuRef.current, {
-        top: '0px',
-        left: '0px', 
-        right: '0px',
-        height: '100vh',
-        borderRadius: '0px', // Smooth transition to no border radius
+        top: '2.5vh',
+        left: '2.5vw', 
+        right: '2.5vw',
+        height: '95vh',
+        borderRadius: '30px', // Keep rounded corners
         duration: 0.8,
         ease: "power2.inOut"
       });
@@ -114,14 +114,24 @@ const Navbar = () => {
       </div>
 
       {/* Center - Navigation Buttons */}
-      <div className="nothing-nav-center">
+      <div className="nothing-nav-center" style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: '1000'
+      }}>
+        <button 
+          className="nothing-explore-btn"
+          onClick={handleExploreClick}
+        >
+          EXPLORE NOTHING
+        </button>
+      </div>
+
+      {/* Right - Shop and New Launch Buttons */}
+      <div className="nothing-nav-right">
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <button 
-            className="nothing-explore-btn"
-            onClick={handleExploreClick}
-          >
-            EXPLORE NOTHING
-          </button>
           <button 
             className="nothing-shop-btn"
             onClick={() => navigate('/shop')}
@@ -150,17 +160,13 @@ const Navbar = () => {
           >
             SHOP
           </button>
+          <button 
+            className="nothing-launch-btn"
+            onClick={() => navigate('/second')}
+          >
+            NEW LAUNCH
+          </button>
         </div>
-      </div>
-
-      {/* Right - New Launch Button */}
-      <div className="nothing-nav-right">
-        <button 
-          className="nothing-launch-btn"
-          onClick={() => navigate('/second')}
-        >
-          NEW LAUNCH
-        </button>
       </div>
     </header>
 
@@ -175,9 +181,10 @@ const Navbar = () => {
         right: '20px',
         width: 'auto',
         height: '80px',
-        background: 'rgba(0, 0, 0, 0.95)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
+        background: 'rgba(0, 0, 0, 0.1)',
+        border: '1px solid rgba(128, 128, 128, 0.3)',
+        backdropFilter: 'blur(15px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(15px) saturate(180%)',
         zIndex: 50000, // Higher than scattered images
         borderRadius: '50px',
         overflow: 'hidden',
@@ -233,7 +240,7 @@ const Navbar = () => {
                 border: 'none',
                 color: '#FFFFFF',
                 fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
-                fontSize: '2.5rem',
+                fontSize: '3.5rem',
                 fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
@@ -254,7 +261,7 @@ const Navbar = () => {
                 border: 'none',
                 color: '#FFFFFF',
                 fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
-                fontSize: '2.5rem',
+                fontSize: '4rem',
                 fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
@@ -275,7 +282,7 @@ const Navbar = () => {
                 border: 'none',
                 color: '#FFFFFF',
                 fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
-                fontSize: '2.5rem',
+                fontSize: '4rem',
                 fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
@@ -296,7 +303,7 @@ const Navbar = () => {
                 border: 'none',
                 color: '#FFFFFF',
                 fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
-                fontSize: '2.5rem',
+                fontSize: '4rem',
                 fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
@@ -423,16 +430,16 @@ const Navbar = () => {
         <div 
           style={{
             position: 'absolute',
-            bottom: '2rem',
+            bottom: '-9rem',
             left: '0',
             right: '0',
             width: '100%',
-            fontSize: 'clamp(8rem, 15vw, 20rem)',
+            fontSize: 'clamp(11rem, 18vw, 23rem)',
             fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
             fontWeight: 'normal',
             color: '#FF0000',
             letterSpacing: '0.5rem',
-            opacity: 0.15,
+            opacity: 1,
             pointerEvents: 'none',
             zIndex: -1,
             textAlign: 'center',

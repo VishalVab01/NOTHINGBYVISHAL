@@ -129,8 +129,8 @@ html, body {
   justify-content: space-between;
   height: 80px;
   z-index: 40000;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
   transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow: visible;
   cursor: default;
@@ -161,8 +161,8 @@ html, body {
   border-radius: 50px;
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(128, 128, 128, 0.3);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
 }
 
 .nothing-header:hover {
@@ -208,6 +208,10 @@ html, body {
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nothing-header.collapsed .nothing-nav-center,
