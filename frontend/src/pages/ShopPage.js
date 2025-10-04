@@ -28,7 +28,7 @@ const ShopPage = () => {
             className="replica-main-heading"
             data-testid="shop-main-heading"
             style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
               fontSize: '5.2rem',
               fontWeight: 'normal',
@@ -51,7 +51,7 @@ const ShopPage = () => {
             style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: 'rgba(255, 255, 255, 0.7)',
-              fontSize: '1.1rem',
+              fontSize: '0.9rem',
               lineHeight: '1.6',
               marginTop: '0',
               marginBottom: '2rem',
@@ -72,7 +72,7 @@ const ShopPage = () => {
             style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FF4500',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'normal',
               textDecoration: 'none',
               letterSpacing: '0.5px',
@@ -162,8 +162,8 @@ const ShopPage = () => {
               background: 'transparent',
               border: 'none',
               color: '#FFFFFF',
-              fontFamily: 'Azonix, Arial, sans-serif',
-              fontSize: '1.2rem',
+              fontFamily: 'Nothing, Arial, sans-serif',
+              fontSize: '1rem',
               fontWeight: 'bold',
               letterSpacing: '1px',
               cursor: 'pointer',
@@ -183,8 +183,8 @@ const ShopPage = () => {
               background: 'transparent',
               border: 'none',
               color: '#FFFFFF',
-              fontFamily: 'Azonix, Arial, sans-serif',
-              fontSize: '1.2rem',
+              fontFamily: 'Nothing, Arial, sans-serif',
+              fontSize: '1rem',
               fontWeight: 'bold',
               letterSpacing: '1px',
               cursor: 'pointer',
@@ -204,8 +204,8 @@ const ShopPage = () => {
               background: 'transparent',
               border: 'none',
               color: '#FFFFFF',
-              fontFamily: 'Azonix, Arial, sans-serif',
-              fontSize: '1.2rem',
+              fontFamily: 'Nothing, Arial, sans-serif',
+              fontSize: '1rem',
               fontWeight: 'bold',
               letterSpacing: '1px',
               cursor: 'pointer',
@@ -225,8 +225,8 @@ const ShopPage = () => {
               background: 'transparent',
               border: 'none',
               color: '#FFFFFF',
-              fontFamily: 'Azonix, Arial, sans-serif',
-              fontSize: '1.2rem',
+              fontFamily: 'Nothing, Arial, sans-serif',
+              fontSize: '1rem',
               fontWeight: 'bold',
               letterSpacing: '1px',
               cursor: 'pointer',
@@ -247,10 +247,11 @@ const ShopPage = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '1.5rem',
-            padding: '2rem 1rem',
-            maxWidth: '2200px',
-            margin: '0 auto'
+            gap: '3rem',
+            padding: '4rem 3rem',
+            maxWidth: '3200px',
+            margin: '0 auto',
+            width: '100%'
           }}
         >
           
@@ -281,15 +282,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -299,7 +300,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹79,999
@@ -333,15 +334,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -351,7 +352,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹79,999
@@ -385,15 +386,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -403,7 +404,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹31,999
@@ -437,15 +438,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -455,7 +456,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹31,999
@@ -489,15 +490,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -507,7 +508,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹31,999
@@ -541,15 +542,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -559,7 +560,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹31,999
@@ -593,15 +594,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -611,7 +612,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹31,999
@@ -645,15 +646,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -663,7 +664,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹31,999
@@ -697,15 +698,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -715,7 +716,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹25,999
@@ -755,9 +756,9 @@ const ShopPage = () => {
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -767,7 +768,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹29,999
@@ -807,9 +808,9 @@ const ShopPage = () => {
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -819,7 +820,7 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹29,999
@@ -853,15 +854,15 @@ const ShopPage = () => {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                maxHeight: '450px',
+                maxHeight: '750px',
                 transition: 'all 0.3s ease',
                 marginBottom: '1rem'
               }}
             />
             <h3 style={{
-              fontFamily: 'Azonix, Arial, sans-serif',
+              fontFamily: 'Nothing, Arial, sans-serif',
               color: '#FFFFFF',
-              fontSize: '1.2rem',
+              fontSize: '1rem',
               fontWeight: 'bold',
               marginBottom: '0.5rem',
               letterSpacing: '0.5px'
@@ -871,10 +872,1206 @@ const ShopPage = () => {
             <p style={{
               fontFamily: 'Nothing, Arial, sans-serif',
               color: '#888888',
-              fontSize: '1rem',
+              fontSize: '0.9rem',
               margin: 0
             }}>
               FROM ₹29,999
+            </p>
+          </div>
+
+          {/* Product Image 13 - CMF Phone 1 (GREEN) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-phone1-green"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_a44d3fd5-d0f6-4cb5-b6cb-c46c2ba7d0ed/artifacts/dlychm3a_CMFPhone1Green.png"
+              alt="CMF Phone 1 Green"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Phone 1 (GREEN)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹25,999
+            </p>
+          </div>
+
+          {/* Product Image 14 - CMF Phone 2 Pro (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-phone2-pro-black-new"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_a44d3fd5-d0f6-4cb5-b6cb-c46c2ba7d0ed/artifacts/tcfqxjwg_CMFPhone2ProBlack.png"
+              alt="CMF Phone 2 Pro Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Phone 2 Pro (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹25,999
+            </p>
+          </div>
+
+          {/* Product Image 15 - CMF Phone 2 Pro (ORANGE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-phone2-pro-orange"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_a44d3fd5-d0f6-4cb5-b6cb-c46c2ba7d0ed/artifacts/b3x2m29v_CMFPhone2ProOrange.png"
+              alt="CMF Phone 2 Pro Orange"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Phone 2 Pro (ORANGE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹25,999
+            </p>
+          </div>
+
+          {/* Product Image 16 - CMF Phone 2 Pro (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-phone2-pro-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_a44d3fd5-d0f6-4cb5-b6cb-c46c2ba7d0ed/artifacts/8uk5vewh_CMFPhone2ProWhite.png"
+              alt="CMF Phone 2 Pro White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Phone 2 Pro (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹25,999
+            </p>
+          </div>
+
+          {/* Product Image 17 - CMF Phone 1 (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-phone1-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/qygxyfoz_CMFPhone1Black.png"
+              alt="CMF Phone 1 Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Phone 1 (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹25,999
+            </p>
+          </div>
+
+          {/* Product Image 18 - CMF Phone 2 Pro (GREEN) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-phone2-pro-green"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/xm5yo1zl_CMFPhone2ProGreen.png"
+              alt="CMF Phone 2 Pro Green"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Phone 2 Pro (GREEN)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹25,999
+            </p>
+          </div>
+
+          {/* Product Image 19 - Ear (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-ear-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/n76vffsj_EarBlack.png"
+              alt="Nothing Ear Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Ear (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 20 - Ear (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-ear-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/qvze1hxk_EarWhite.png"
+              alt="Nothing Ear White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Ear (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 21 - Ear (a) (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-ear-a-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/pryxvxh6_EaraBlack.png"
+              alt="Nothing Ear (a) Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Ear (a) (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 22 - Ear (a) (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-ear-a-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/z5y37fbn_EaraWhite.png"
+              alt="Nothing Ear (a) White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Ear (a) (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 23 - Ear (a) (YELLOW) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-ear-a-yellow"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/v598jld7_EaraYellow.png"
+              alt="Nothing Ear (a) Yellow"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Ear (a) (YELLOW)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 24 - Headphones 1 (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-headphones1-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/h5m8od0c_Headphone1Black.png"
+              alt="Nothing Headphones 1 Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Headphones 1 (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹9,999
+            </p>
+          </div>
+
+          {/* Product Image 25 - CMF Buds Pro 2 (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds-pro2-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/5o7mohxs_CMFBudsPro2Black.png"
+              alt="CMF Buds Pro 2 Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds Pro 2 (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹8,999
+            </p>
+          </div>
+
+          {/* Product Image 26 - CMF Buds Pro 2 (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds-pro2-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/cfrv4a1c_CMFBudsPro2White.png"
+              alt="CMF Buds Pro 2 White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds Pro 2 (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹8,999
+            </p>
+          </div>
+
+          {/* Product Image 27 - Ear Open (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-ear-open-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/g2qh2k5s_EarOpenWhite.png"
+              alt="Nothing Ear Open White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Ear Open (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 28 - Headphones 1 (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-headphones1-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/3fynvfi8_Headphone1White.png"
+              alt="Nothing Headphones 1 White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              Headphones 1 (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹9,999
+            </p>
+          </div>
+
+          {/* Product Image 29 - CMF Buds 2 Plus (BLUE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds2-plus-blue"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/8kjp72kr_CMFBuds2PlusBlue.png"
+              alt="CMF Buds 2 Plus Blue"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds 2 Plus (BLUE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹8,999
+            </p>
+          </div>
+
+          {/* Product Image 30 - CMF Buds 2 Plus (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds2-plus-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/cegen9ro_CMFBuds2PlusWhite.png"
+              alt="CMF Buds 2 Plus White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds 2 Plus (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹8,999
+            </p>
+          </div>
+
+          {/* Product Image 31 - CMF Buds Pro 2 (BLUE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds-pro2-blue"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/pvl7q2dv_CMFBudsPro2Blue.png"
+              alt="CMF Buds Pro 2 Blue"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds Pro 2 (BLUE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹8,999
+            </p>
+          </div>
+
+          {/* Product Image 32 - CMF Buds Pro 2 (ORANGE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds-pro2-orange"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/e49xv5ze_CMFBudsPro2Orange.png"
+              alt="CMF Buds Pro 2 Orange"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds Pro 2 (ORANGE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹8,999
+            </p>
+          </div>
+
+          {/* Product Image 33 - CMF Buds 2a (BLACK) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds2a-black"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/o7t8a0ey_CMFBuds2aBlack.png"
+              alt="CMF Buds 2a Black"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds 2a (BLACK)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 34 - CMF Buds 2a (ORANGE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds2a-orange"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/kao3ao5y_CMFBuds2aOrange.png"
+              alt="CMF Buds 2a Orange"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds 2a (ORANGE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
+            </p>
+          </div>
+
+          {/* Product Image 35 - CMF Buds 2a (WHITE) */}
+          <div 
+            className="product-image"
+            data-testid="product-image-cmf-buds2a-white"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textAlign: 'center'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.querySelector('img').style.transform = 'scale(1)';
+            }}
+          >
+            <img 
+              src="https://customer-assets.emergentagent.com/job_shop-additions/artifacts/p0xipxil_CMFBuds2aWhite.png"
+              alt="CMF Buds 2a White"
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+                maxHeight: '750px',
+                transition: 'all 0.3s ease',
+                marginBottom: '1rem'
+              }}
+            />
+            <h3 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#FFFFFF',
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem',
+              letterSpacing: '0.5px'
+            }}>
+              CMF Buds 2a (WHITE)
+            </h3>
+            <p style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              color: '#888888',
+              fontSize: '0.9rem',
+              margin: 0
+            }}>
+              FROM ₹7,999
             </p>
           </div>
           
