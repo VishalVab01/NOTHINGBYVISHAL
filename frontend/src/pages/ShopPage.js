@@ -28,7 +28,7 @@ const ShopPage = () => {
             className="replica-main-heading"
             data-testid="shop-main-heading"
             style={{
-              fontFamily: 'Nothing, Arial, sans-serif',
+              fontFamily: 'Azonix, Azonix-new, Arial, sans-serif', // Changed to Azonix font
               color: '#FFFFFF',
               fontSize: '5.2rem',
               fontWeight: 'normal',

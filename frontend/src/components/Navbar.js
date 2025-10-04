@@ -13,6 +13,7 @@ const Navbar = () => {
   // Refs for GSAP animations
   const expandedMenuRef = useRef(null);
   const menuContentRef = useRef(null);
+  const nothingTextRef = useRef(null);
 
   useEffect(() => {
     // Start animation sequence on component mount
@@ -72,11 +73,61 @@ const Navbar = () => {
         delay: 0.3,
         ease: "power2.out"
       });
+      
+      // Animate NOTHING letters sliding up with stagger
+      if (nothingTextRef.current) {
+        const letters = nothingTextRef.current.querySelectorAll('[class*="nothing-letter-"]');
+        gsap.fromTo(letters, 
+          {
+            opacity: 0,
+            y: 100
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.8, // Start after menu content appears
+            stagger: 0.1, // 0.1 second delay between each letter
+            ease: "power2.out"
+          }
+        );
+      }
+      
+      // Animate NOTHING letters sliding up with stagger
+      if (nothingTextRef.current) {
+        const letters = nothingTextRef.current.querySelectorAll('[class*="nothing-letter-"]');
+        gsap.fromTo(letters, 
+          {
+            opacity: 0,
+            y: 100
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.8, // Start after menu content appears
+            stagger: 0.1, // 0.1 second delay between each letter
+            ease: "power2.out"
+          }
+        );
+      }
     }
   };
 
   const handleCloseMenu = () => {
     if (expandedMenuRef.current && menuContentRef.current) {
+      // Animate NOTHING letters sliding down first
+      if (nothingTextRef.current) {
+        const letters = nothingTextRef.current.querySelectorAll('[class*="nothing-letter-"]');
+        gsap.to(letters, {
+          opacity: 0,
+          y: 100,
+          duration: 0.6,
+          stagger: 0.05, // Faster stagger for closing
+          ease: "power2.in"
+        });
+      }
+      
       // Animate content disappearance first
       gsap.to(menuContentRef.current, {
         opacity: 0,
@@ -183,8 +234,8 @@ const Navbar = () => {
         height: '80px',
         background: 'rgba(0, 0, 0, 0.1)',
         border: '1px solid rgba(128, 128, 128, 0.3)',
-        backdropFilter: 'blur(15px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(15px) saturate(180%)',
+        backdropFilter: 'blur(25px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(25px) saturate(180%)',
         zIndex: 50000, // Higher than scattered images
         borderRadius: '50px',
         overflow: 'hidden',
@@ -232,7 +283,8 @@ const Navbar = () => {
         >
         {/* Left Column - Main Navigation */}
         <div style={{ flex: '1', marginRight: '4rem' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {/* Menu spacing control: Change 'gap' value to adjust space between menu items */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0rem' }}>
             <button 
               onClick={() => { navigate('/'); handleCloseMenu(); }}
               style={{
@@ -266,7 +318,8 @@ const Navbar = () => {
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
-                transition: 'color 0.3s ease'
+                transition: 'color 0.3s ease',
+                whiteSpace: 'nowrap' // Prevent line breaks
               }}
               onMouseOver={(e) => e.target.style.color = '#FF0000'}
               onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
@@ -320,21 +373,24 @@ const Navbar = () => {
         </div>
 
         {/* Right Section - Product Categories */}
-        <div style={{ flex: '2', display: 'flex', gap: '6rem' }}>
+        <div style={{ flex: '2', display: 'flex', flexDirection: 'column', gap: '3rem', marginLeft: '7rem' }}>
           
           {/* Phone Category */}
-          <div style={{ flex: '1' }}>
+          <div style={{ width: '100%', display: 'flex', gap: '3rem' }}>
             <h2 style={{
               fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
               fontSize: '1.8rem',
               fontWeight: 'normal',
               color: '#FFFFFF',
-              marginBottom: '2rem',
-              letterSpacing: '1px'
+              letterSpacing: '1px',
+              minWidth: '120px',
+              display: 'flex',
+              alignItems: 'flex-start',
+              paddingTop: '2rem' // Center with options list
             }}>
               PHONE
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: '1', width: '100%' }}>
               {[
                 'NOTHING PHONE (3)',
                 'NOTHING PHONE 3A PRO',
@@ -355,7 +411,8 @@ const Navbar = () => {
                     textAlign: 'left',
                     letterSpacing: '0.5px',
                     transition: 'color 0.3s ease',
-                    opacity: 0.8
+                    opacity: 0.8,
+                    whiteSpace: 'nowrap' // Prevent line breaks for phone options
                   }}
                   onMouseOver={(e) => {
                     e.target.style.color = '#FF0000';
@@ -374,18 +431,21 @@ const Navbar = () => {
           </div>
 
           {/* Audio Category */}
-          <div style={{ flex: '1' }}>
+          <div style={{ width: '100%', display: 'flex', gap: '3rem' }}>
             <h2 style={{
               fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
               fontSize: '1.8rem',
               fontWeight: 'normal',
               color: '#FFFFFF',
-              marginBottom: '2rem',
-              letterSpacing: '1px'
+              letterSpacing: '1px',
+              minWidth: '120px',
+              display: 'flex',
+              alignItems: 'flex-start',
+              paddingTop: '2rem' // Center with options list
             }}>
               AUDIO
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', flex: '1', width: '100%' }}>
               {[
                 'NOTHING HEADPHONE 1',
                 'NOTHING EAR',
@@ -406,7 +466,8 @@ const Navbar = () => {
                     textAlign: 'left',
                     letterSpacing: '0.5px',
                     transition: 'color 0.3s ease',
-                    opacity: 0.8
+                    opacity: 0.8,
+                    whiteSpace: 'nowrap' // Prevent line breaks for audio options
                   }}
                   onMouseOver={(e) => {
                     e.target.style.color = '#FF0000';
@@ -426,8 +487,9 @@ const Navbar = () => {
         </div>
       </div>
 
-        {/* Background NOTHING Text */}
+        {/* Background NOTHING Text - Letter by Letter Animation */}
         <div 
+          ref={nothingTextRef}
           style={{
             position: 'absolute',
             bottom: '-9rem',
@@ -437,7 +499,7 @@ const Navbar = () => {
             fontSize: 'clamp(11rem, 18vw, 23rem)',
             fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
             fontWeight: 'normal',
-            color: '#FF0000',
+            color: '#e12828ff',
             letterSpacing: '0.5rem',
             opacity: 1,
             pointerEvents: 'none',
@@ -447,7 +509,20 @@ const Navbar = () => {
             overflow: 'visible'
           }}
         >
-          NOTHING
+          {/* Split NOTHING into individual letters for animation */}
+          {"NOTHING".split("").map((letter, index) => (
+            <span 
+              key={index}
+              className={`nothing-letter-${index}`}
+              style={{
+                display: 'inline-block',
+                opacity: 0,
+                transform: 'translateY(100px)'
+              }}
+            >
+              {letter}
+            </span>
+          ))}
         </div>
       </div>
     </div>
