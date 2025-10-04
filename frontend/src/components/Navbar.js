@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { gsap } from "gsap";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -8,6 +9,10 @@ const Navbar = () => {
   // Animation states
   const [animationPhase, setAnimationPhase] = useState('collapsed');
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+  
+  // Refs for GSAP animations
+  const expandedMenuRef = useRef(null);
+  const menuContentRef = useRef(null);
 
   useEffect(() => {
     // Start animation sequence on component mount
@@ -28,10 +33,74 @@ const Navbar = () => {
 
   const handleExploreClick = () => {
     setIsMenuExpanded(true);
+    
+    // GSAP animation for smooth vertical expansion
+    if (expandedMenuRef.current && menuContentRef.current) {
+      // Set initial state - menu starts from navbar position with 0 height
+      gsap.set(expandedMenuRef.current, {
+        top: '20px', // Start from navbar position
+        left: '20px',
+        right: '20px', 
+        height: '80px', // Start with navbar height
+        borderRadius: '50px', // Start with navbar border radius
+        opacity: 1,
+        display: 'block'
+      });
+      
+      // Hide content initially
+      gsap.set(menuContentRef.current, {
+        opacity: 0,
+        y: 50
+      });
+      
+      // Animate expansion to full screen
+      gsap.to(expandedMenuRef.current, {
+        top: '0px',
+        left: '0px', 
+        right: '0px',
+        height: '100vh',
+        borderRadius: '0px', // Smooth transition to no border radius
+        duration: 0.8,
+        ease: "power2.inOut"
+      });
+      
+      // Animate content appearance after expansion starts
+      gsap.to(menuContentRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        delay: 0.3,
+        ease: "power2.out"
+      });
+    }
   };
 
   const handleCloseMenu = () => {
-    setIsMenuExpanded(false);
+    if (expandedMenuRef.current && menuContentRef.current) {
+      // Animate content disappearance first
+      gsap.to(menuContentRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 0.4,
+        ease: "power2.in"
+      });
+      
+      // Animate menu collapse back to navbar size and position
+      gsap.to(expandedMenuRef.current, {
+        top: '20px',
+        left: '20px',
+        right: '20px',
+        height: '80px',
+        borderRadius: '50px',
+        duration: 0.6,
+        delay: 0.2,
+        ease: "power2.inOut",
+        onComplete: () => {
+          setIsMenuExpanded(false);
+          gsap.set(expandedMenuRef.current, { display: 'none' });
+        }
+      });
+    }
   };
 
   return (
@@ -95,60 +164,65 @@ const Navbar = () => {
       </div>
     </header>
 
-    {/* Expanded Menu Overlay */}
-    {isMenuExpanded && (
+    {/* Expanded Menu Overlay - Always rendered but hidden */}
     <div 
+      ref={expandedMenuRef}
       className="expanded-menu-overlay"
       style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100vh',
+        top: '20px',
+        left: '20px',
+        right: '20px',
+        width: 'auto',
+        height: '80px',
         background: 'rgba(0, 0, 0, 0.95)',
-        backdropFilter: 'blur(10px)',
-        zIndex: 10000,
-        borderRadius: '0px',
-        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        zIndex: 50000, // Higher than scattered images
+        borderRadius: '50px',
         overflow: 'hidden',
-        opacity: isMenuExpanded ? 1 : 0,
-        transform: isMenuExpanded ? 'scale(1)' : 'scale(0.95)',
-        transformOrigin: 'top center'
+        display: 'none', // Initially hidden
+        cursor: 'default' // Ensure cursor is visible
       }}
     >
-      {/* Close Button */}
-      <button 
-        onClick={handleCloseMenu}
-        style={{
-          position: 'absolute',
-          top: '2rem',
-          left: '2rem',
-          background: 'transparent',
-          border: 'none',
-          color: '#FF0000',
-          fontFamily: 'Nothing, Arial, sans-serif',
-          fontSize: '1.2rem',
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          letterSpacing: '1px',
-          opacity: isMenuExpanded ? 1 : 0,
-          transition: 'opacity 0.5s ease 0.3s'
-        }}
-        data-testid="close-menu-btn"
-      >
-        CLOSE
-      </button>
-
-      {/* Menu Content */}
+      {/* Menu Content Container */}
       <div 
+        ref={menuContentRef}
         style={{
-          display: 'flex',
+          opacity: 0,
           height: '100%',
-          padding: '8rem 4rem 4rem 4rem',
-          opacity: isMenuExpanded ? 1 : 0,
-          transition: 'opacity 0.6s ease 0.4s'
+          cursor: 'default' // Ensure cursor is visible
         }}
       >
+        {/* Close Button */}
+        <button 
+          onClick={handleCloseMenu}
+          style={{
+            position: 'absolute',
+            top: '2rem',
+            left: '2rem',
+            background: 'transparent',
+            border: 'none',
+            color: '#FF0000',
+            fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
+            fontSize: '1.2rem',
+            fontWeight: 'normal',
+            cursor: 'pointer',
+            letterSpacing: '1px'
+          }}
+          data-testid="close-menu-btn"
+        >
+          CLOSE
+        </button>
+
+        {/* Menu Content */}
+        <div 
+          style={{
+            display: 'flex',
+            height: '100%',
+            padding: '8rem 4rem 4rem 4rem'
+          }}
+        >
         {/* Left Column - Main Navigation */}
         <div style={{ flex: '1', marginRight: '4rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -158,9 +232,9 @@ const Navbar = () => {
                 background: 'transparent',
                 border: 'none',
                 color: '#FFFFFF',
-                fontFamily: 'Nothing, Arial, sans-serif',
+                fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
                 fontSize: '2.5rem',
-                fontWeight: 'bold',
+                fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
@@ -179,9 +253,9 @@ const Navbar = () => {
                 background: 'transparent',
                 border: 'none',
                 color: '#FFFFFF',
-                fontFamily: 'Nothing, Arial, sans-serif',
+                fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
                 fontSize: '2.5rem',
-                fontWeight: 'bold',
+                fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
@@ -200,9 +274,9 @@ const Navbar = () => {
                 background: 'transparent',
                 border: 'none',
                 color: '#FFFFFF',
-                fontFamily: 'Nothing, Arial, sans-serif',
+                fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
                 fontSize: '2.5rem',
-                fontWeight: 'bold',
+                fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
@@ -221,9 +295,9 @@ const Navbar = () => {
                 background: 'transparent',
                 border: 'none',
                 color: '#FFFFFF',
-                fontFamily: 'Nothing, Arial, sans-serif',
+                fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
                 fontSize: '2.5rem',
-                fontWeight: 'bold',
+                fontWeight: 'normal',
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
@@ -244,9 +318,9 @@ const Navbar = () => {
           {/* Phone Category */}
           <div style={{ flex: '1' }}>
             <h2 style={{
-              fontFamily: 'Nothing, Arial, sans-serif',
+              fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
               fontSize: '1.8rem',
-              fontWeight: 'bold',
+              fontWeight: 'normal',
               color: '#FFFFFF',
               marginBottom: '2rem',
               letterSpacing: '1px'
@@ -268,7 +342,7 @@ const Navbar = () => {
                     background: 'transparent',
                     border: 'none',
                     color: '#FFFFFF',
-                    fontFamily: 'Nothing, Arial, sans-serif',
+                    fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
                     fontSize: '1rem',
                     cursor: 'pointer',
                     textAlign: 'left',
@@ -295,9 +369,9 @@ const Navbar = () => {
           {/* Audio Category */}
           <div style={{ flex: '1' }}>
             <h2 style={{
-              fontFamily: 'Nothing, Arial, sans-serif',
+              fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
               fontSize: '1.8rem',
-              fontWeight: 'bold',
+              fontWeight: 'normal',
               color: '#FFFFFF',
               marginBottom: '2rem',
               letterSpacing: '1px'
@@ -319,7 +393,7 @@ const Navbar = () => {
                     background: 'transparent',
                     border: 'none',
                     color: '#FFFFFF',
-                    fontFamily: 'Nothing, Arial, sans-serif',
+                    fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
                     fontSize: '1rem',
                     cursor: 'pointer',
                     textAlign: 'left',
@@ -345,28 +419,31 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Background NOTHING Text */}
-      <div 
-        style={{
-          position: 'absolute',
-          bottom: '2rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          fontSize: '8rem',
-          fontFamily: 'Nothing, Arial, sans-serif',
-          fontWeight: 'bold',
-          color: '#FF0000',
-          letterSpacing: '1rem',
-          opacity: isMenuExpanded ? 0.2 : 0,
-          transition: 'opacity 0.8s ease 0.6s',
-          pointerEvents: 'none',
-          zIndex: -1
-        }}
-      >
-        NOTHING
+        {/* Background NOTHING Text */}
+        <div 
+          style={{
+            position: 'absolute',
+            bottom: '2rem',
+            left: '0',
+            right: '0',
+            width: '100%',
+            fontSize: 'clamp(8rem, 15vw, 20rem)',
+            fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
+            fontWeight: 'normal',
+            color: '#FF0000',
+            letterSpacing: '0.5rem',
+            opacity: 0.15,
+            pointerEvents: 'none',
+            zIndex: -1,
+            textAlign: 'center',
+            whiteSpace: 'nowrap',
+            overflow: 'visible'
+          }}
+        >
+          NOTHING
+        </div>
       </div>
     </div>
-    )}
     </>
   );
 };
