@@ -14,6 +14,14 @@ const Navbar = () => {
   const expandedMenuRef = useRef(null);
   const menuContentRef = useRef(null);
   const nothingTextRef = useRef(null);
+  
+  // Refs for menu items animation
+  const homeButtonRef = useRef(null);
+  const nothingNewButtonRef = useRef(null);
+  const shopButtonRef = useRef(null);
+  const cmfButtonRef = useRef(null);
+  const phoneColumnRef = useRef(null);
+  const audioColumnRef = useRef(null);
 
   useEffect(() => {
     // Start animation sequence on component mount
@@ -74,24 +82,41 @@ const Navbar = () => {
         ease: "power2.out"
       });
       
-      // Animate NOTHING letters sliding up with stagger
-      if (nothingTextRef.current) {
-        const letters = nothingTextRef.current.querySelectorAll('[class*="nothing-letter-"]');
-        gsap.fromTo(letters, 
-          {
-            opacity: 0,
-            y: 100
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            delay: 0.8, // Start after menu content appears
-            stagger: 0.1, // 0.1 second delay between each letter
-            ease: "power2.out"
-          }
-        );
-      }
+      // Set initial state for menu buttons (hidden and positioned down)
+      const menuButtons = [homeButtonRef.current, nothingNewButtonRef.current, shopButtonRef.current, cmfButtonRef.current].filter(Boolean);
+      gsap.set(menuButtons, {
+        opacity: 0,
+        y: 50
+      });
+      
+      // Set initial state for Phone and Audio columns (hidden and positioned down)
+      const columnElements = [phoneColumnRef.current, audioColumnRef.current].filter(Boolean);
+      gsap.set(columnElements, {
+        opacity: 0,
+        y: 50
+      });
+      
+      // Animate menu buttons with staggered fade-in from bottom (0.2s delay between each)
+      gsap.to(menuButtons, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        delay: 0.9, // Start after menu content appears
+        stagger: 0.2, // 0.2 second delay between each menu item
+        ease: "power2.out"
+      });
+      
+      // Animate Phone and Audio columns after menu buttons complete (pause = 0.3s)
+      // Menu animation: 0.9s delay + (4 buttons × 0.2s stagger) + 0.6s duration = 2.3s
+      // Add 0.3s pause = 2.6s total delay
+      gsap.to(columnElements, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        delay: 2.6, // Short pause after menu buttons finish
+        stagger: 0.1, // Small delay between Phone and Audio columns
+        ease: "power2.out"
+      });
       
       // Animate NOTHING letters sliding up with stagger
       if (nothingTextRef.current) {
@@ -116,7 +141,28 @@ const Navbar = () => {
 
   const handleCloseMenu = () => {
     if (expandedMenuRef.current && menuContentRef.current) {
-      // Animate NOTHING letters sliding down first
+      // Animate Phone and Audio columns disappearing first (reverse order)
+      const columnElements = [phoneColumnRef.current, audioColumnRef.current].filter(Boolean);
+      gsap.to(columnElements, {
+        opacity: 0,
+        y: 50,
+        duration: 0.4,
+        stagger: 0.05, // Quick stagger for closing
+        ease: "power2.in"
+      });
+      
+      // Animate menu buttons disappearing (reverse stagger)
+      const menuButtons = [homeButtonRef.current, nothingNewButtonRef.current, shopButtonRef.current, cmfButtonRef.current].filter(Boolean);
+      gsap.to(menuButtons, {
+        opacity: 0,
+        y: 50,
+        duration: 0.4,
+        delay: 0.1, // Start slightly after columns
+        stagger: 0.05, // Faster reverse stagger
+        ease: "power2.in"
+      });
+      
+      // Animate NOTHING letters sliding down
       if (nothingTextRef.current) {
         const letters = nothingTextRef.current.querySelectorAll('[class*="nothing-letter-"]');
         gsap.to(letters, {
@@ -128,11 +174,12 @@ const Navbar = () => {
         });
       }
       
-      // Animate content disappearance first
+      // Animate content disappearance
       gsap.to(menuContentRef.current, {
         opacity: 0,
         y: 50,
         duration: 0.4,
+        delay: 0.2,
         ease: "power2.in"
       });
       
@@ -144,7 +191,7 @@ const Navbar = () => {
         height: '80px',
         borderRadius: '50px',
         duration: 0.6,
-        delay: 0.2,
+        delay: 0.4,
         ease: "power2.inOut",
         onComplete: () => {
           setIsMenuExpanded(false);
@@ -286,6 +333,7 @@ const Navbar = () => {
           {/* Menu spacing control: Change 'gap' value to adjust space between menu items */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0rem' }}>
             <button 
+              ref={homeButtonRef}
               onClick={() => { navigate('/'); handleCloseMenu(); }}
               style={{
                 background: 'transparent',
@@ -297,16 +345,31 @@ const Navbar = () => {
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
-                transition: 'color 0.3s ease'
+                transition: 'all 0.2s ease',
+                opacity: 0, // Initial hidden state
+                transform: 'scale(1)',
+                textShadow: 'none',
+                borderBottom: '2px solid transparent'
               }}
-              onMouseOver={(e) => e.target.style.color = '#FF0000'}
-              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              onMouseOver={(e) => {
+                e.target.style.color = '#FF0000';
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
+                e.target.style.borderBottom = '2px solid #FF0000';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.color = '#FFFFFF';
+                e.target.style.transform = 'scale(1)';
+                e.target.style.textShadow = 'none';
+                e.target.style.borderBottom = '2px solid transparent';
+              }}
               data-testid="menu-home-btn"
             >
               HOME
             </button>
 
             <button 
+              ref={nothingNewButtonRef}
               onClick={() => { navigate('/'); handleCloseMenu(); }}
               style={{
                 background: 'transparent',
@@ -318,17 +381,32 @@ const Navbar = () => {
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
-                transition: 'color 0.3s ease',
-                whiteSpace: 'nowrap' // Prevent line breaks
+                transition: 'all 0.2s ease',
+                whiteSpace: 'nowrap', // Prevent line breaks
+                opacity: 0, // Initial hidden state
+                transform: 'scale(1)',
+                textShadow: 'none',
+                borderBottom: '2px solid transparent'
               }}
-              onMouseOver={(e) => e.target.style.color = '#FF0000'}
-              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              onMouseOver={(e) => {
+                e.target.style.color = '#FF0000';
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
+                e.target.style.borderBottom = '2px solid #FF0000';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.color = '#FFFFFF';
+                e.target.style.transform = 'scale(1)';
+                e.target.style.textShadow = 'none';
+                e.target.style.borderBottom = '2px solid transparent';
+              }}
               data-testid="menu-nothing-new-btn"
             >
               NOTHING NEW
             </button>
 
             <button 
+              ref={shopButtonRef}
               onClick={() => { navigate('/shop'); handleCloseMenu(); }}
               style={{
                 background: 'transparent',
@@ -340,16 +418,31 @@ const Navbar = () => {
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
-                transition: 'color 0.3s ease'
+                transition: 'all 0.2s ease',
+                opacity: 0, // Initial hidden state
+                transform: 'scale(1)',
+                textShadow: 'none',
+                borderBottom: '2px solid transparent'
               }}
-              onMouseOver={(e) => e.target.style.color = '#FF0000'}
-              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              onMouseOver={(e) => {
+                e.target.style.color = '#FF0000';
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
+                e.target.style.borderBottom = '2px solid #FF0000';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.color = '#FFFFFF';
+                e.target.style.transform = 'scale(1)';
+                e.target.style.textShadow = 'none';
+                e.target.style.borderBottom = '2px solid transparent';
+              }}
               data-testid="menu-shop-btn"
             >
               SHOP
             </button>
 
             <button 
+              ref={cmfButtonRef}
               onClick={() => { navigate('/'); handleCloseMenu(); }}
               style={{
                 background: 'transparent',
@@ -361,10 +454,24 @@ const Navbar = () => {
                 cursor: 'pointer',
                 textAlign: 'left',
                 letterSpacing: '2px',
-                transition: 'color 0.3s ease'
+                transition: 'all 0.2s ease',
+                opacity: 0, // Initial hidden state
+                transform: 'scale(1)',
+                textShadow: 'none',
+                borderBottom: '2px solid transparent'
               }}
-              onMouseOver={(e) => e.target.style.color = '#FF0000'}
-              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              onMouseOver={(e) => {
+                e.target.style.color = '#FF0000';
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.textShadow = '0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.3)';
+                e.target.style.borderBottom = '2px solid #FF0000';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.color = '#FFFFFF';
+                e.target.style.transform = 'scale(1)';
+                e.target.style.textShadow = 'none';
+                e.target.style.borderBottom = '2px solid transparent';
+              }}
               data-testid="menu-cmf-btn"
             >
               CMF
@@ -373,10 +480,10 @@ const Navbar = () => {
         </div>
 
         {/* Right Section - Product Categories */}
-        <div style={{ flex: '2', display: 'flex', flexDirection: 'column', gap: '3rem', marginLeft: '7rem' }}>
+        <div style={{ flex: '2', display: 'flex', flexDirection: 'column', gap: '3rem', marginLeft: '10rem', marginTop: '-2rem' }}>
           
           {/* Phone Category */}
-          <div style={{ width: '100%', display: 'flex', gap: '3rem' }}>
+          <div ref={phoneColumnRef} style={{ width: '100%', display: 'flex', gap: '3rem', opacity: 0 }}>
             <h2 style={{
               fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
               fontSize: '1.8rem',
@@ -431,7 +538,7 @@ const Navbar = () => {
           </div>
 
           {/* Audio Category */}
-          <div style={{ width: '100%', display: 'flex', gap: '3rem' }}>
+          <div ref={audioColumnRef} style={{ width: '100%', display: 'flex', gap: '3rem', opacity: 0 }}>
             <h2 style={{
               fontFamily: 'Azonix, Azonix-new, Arial, sans-serif',
               fontSize: '1.8rem',

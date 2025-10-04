@@ -116,7 +116,7 @@ if (typeof window !== 'undefined') {
                                         y: 0, // No vertical movement
                                         opacity: Math.max(0, opacity),
                                         rotation: 0, // No rotation - stays straight
-                                        zIndex: 25000 + (index * 100),
+                                        zIndex: 45000 + (index * 100),
                                         ease: "power2.out"
                                     });
                                 } else if (index === 3) {
@@ -132,7 +132,7 @@ if (typeof window !== 'undefined') {
                                         y: 0, // No vertical movement
                                         opacity: Math.max(0, opacity),
                                         rotation: 0, // No rotation - stays straight
-                                        zIndex: 25000 + (index * 100),
+                                        zIndex: 45000 + (index * 100),
                                         ease: "power2.out"
                                     });
                                 } else if (index === 2) {
@@ -149,12 +149,12 @@ if (typeof window !== 'undefined') {
                                         y: moveDistanceY, // Move up off screen (diagonal path)
                                         opacity: Math.max(0, opacity),
                                         rotation: parseFloat(image.position.rotate), // Keep original rotation
-                                        zIndex: 25000 + (index * 100),
+                                        zIndex: 45000 + (index * 100),
                                         ease: "power2.out"
                                     });
                                 } else if (index === 4) {
-                                    // Custom animation for third right image: move diagonally down-right off screen (no scaling)
-                                    const scale = 1; // Keep original size, no scaling
+                                    // Custom animation for third right image: move diagonally down-right with subtle enlargement
+                                    const scale = 1 + (progress * 0.4); // Subtle enlargement - grows to 1.4x (40% bigger)
                                     const moveDistanceX = progress * 600; // Move right off screen
                                     const moveDistanceY = progress * 400; // Move down off screen
                                     const opacity = progress < 0.6 ? 1 : 1 - ((progress - 0.6) / 0.4); // Fade out earlier
@@ -166,7 +166,7 @@ if (typeof window !== 'undefined') {
                                         y: moveDistanceY, // Move down off screen (diagonal path)
                                         opacity: Math.max(0, opacity),
                                         rotation: parseFloat(image.position.rotate), // Keep original rotation
-                                        zIndex: 25000 + (index * 100),
+                                        zIndex: 45000 + (index * 100),
                                         ease: "power2.out"
                                     });
                                 } else if (index === 0) {
@@ -189,7 +189,7 @@ if (typeof window !== 'undefined') {
                                         x: moveDistance,
                                         opacity: Math.max(0, opacity),
                                         rotation: parseFloat(image.position.rotate) + (progress * -20), // Rotate left
-                                        zIndex: 25000 + (index * 100),
+                                        zIndex: 45000 + (index * 100),
                                         ease: "power2.out"
                                     });
                                 } else {
@@ -212,7 +212,7 @@ if (typeof window !== 'undefined') {
                                         x: moveDistance,
                                         opacity: Math.max(0, opacity),
                                         rotation: parseFloat(image.position.rotate) + (progress * (isLeftSide ? -20 : 20)),
-                                        zIndex: 25000 + (index * 100),
+                                        zIndex: 45000 + (index * 100),
                                         ease: "power2.out"
                                     });
                                 }
@@ -245,7 +245,7 @@ if (typeof window !== 'undefined') {
                                       position: 'absolute',
                                                   ...image.position,
                                                               transform: `rotate(${image.position.rotate})`,
-                                                                          zIndex: 25000 + (index * 100), // Extremely high base z-index
+                                                                          zIndex: 45000 + (index * 100), // Above navbar - overlaps small navbar
                                                                                       '--rotate': image.position.rotate,
                                                                                                   '--float-delay': `${index * 0.5}s`
                                                                                                             }}
