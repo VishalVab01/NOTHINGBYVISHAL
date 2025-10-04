@@ -7,6 +7,7 @@ const Navbar = () => {
   
   // Animation states
   const [animationPhase, setAnimationPhase] = useState('collapsed');
+  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
   useEffect(() => {
     // Start animation sequence on component mount
@@ -25,7 +26,16 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleExploreClick = () => {
+    setIsMenuExpanded(true);
+  };
+
+  const handleCloseMenu = () => {
+    setIsMenuExpanded(false);
+  };
+
   return (
+    <>
     <header className={`nothing-header ${animationPhase}`}>
       {/* Left - Branding */}
       <div className="nothing-nav-left">
@@ -39,7 +49,7 @@ const Navbar = () => {
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           <button 
             className="nothing-explore-btn"
-            onClick={() => navigate('/')}
+            onClick={handleExploreClick}
           >
             EXPLORE NOTHING
           </button>
@@ -84,6 +94,280 @@ const Navbar = () => {
         </button>
       </div>
     </header>
+
+    {/* Expanded Menu Overlay */}
+    {isMenuExpanded && (
+    <div 
+      className="expanded-menu-overlay"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100vh',
+        background: 'rgba(0, 0, 0, 0.95)',
+        backdropFilter: 'blur(10px)',
+        zIndex: 10000,
+        borderRadius: '0px',
+        transition: 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        overflow: 'hidden',
+        opacity: isMenuExpanded ? 1 : 0,
+        transform: isMenuExpanded ? 'scale(1)' : 'scale(0.95)',
+        transformOrigin: 'top center'
+      }}
+    >
+      {/* Close Button */}
+      <button 
+        onClick={handleCloseMenu}
+        style={{
+          position: 'absolute',
+          top: '2rem',
+          left: '2rem',
+          background: 'transparent',
+          border: 'none',
+          color: '#FF0000',
+          fontFamily: 'Nothing, Arial, sans-serif',
+          fontSize: '1.2rem',
+          fontWeight: 'bold',
+          cursor: 'pointer',
+          letterSpacing: '1px',
+          opacity: isMenuExpanded ? 1 : 0,
+          transition: 'opacity 0.5s ease 0.3s'
+        }}
+        data-testid="close-menu-btn"
+      >
+        CLOSE
+      </button>
+
+      {/* Menu Content */}
+      <div 
+        style={{
+          display: 'flex',
+          height: '100%',
+          padding: '8rem 4rem 4rem 4rem',
+          opacity: isMenuExpanded ? 1 : 0,
+          transition: 'opacity 0.6s ease 0.4s'
+        }}
+      >
+        {/* Left Column - Main Navigation */}
+        <div style={{ flex: '1', marginRight: '4rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <button 
+              onClick={() => { navigate('/'); handleCloseMenu(); }}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#FFFFFF',
+                fontFamily: 'Nothing, Arial, sans-serif',
+                fontSize: '2.5rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                textAlign: 'left',
+                letterSpacing: '2px',
+                transition: 'color 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.color = '#FF0000'}
+              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              data-testid="menu-home-btn"
+            >
+              HOME
+            </button>
+
+            <button 
+              onClick={() => { navigate('/'); handleCloseMenu(); }}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#FFFFFF',
+                fontFamily: 'Nothing, Arial, sans-serif',
+                fontSize: '2.5rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                textAlign: 'left',
+                letterSpacing: '2px',
+                transition: 'color 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.color = '#FF0000'}
+              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              data-testid="menu-nothing-new-btn"
+            >
+              NOTHING NEW
+            </button>
+
+            <button 
+              onClick={() => { navigate('/shop'); handleCloseMenu(); }}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#FFFFFF',
+                fontFamily: 'Nothing, Arial, sans-serif',
+                fontSize: '2.5rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                textAlign: 'left',
+                letterSpacing: '2px',
+                transition: 'color 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.color = '#FF0000'}
+              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              data-testid="menu-shop-btn"
+            >
+              SHOP
+            </button>
+
+            <button 
+              onClick={() => { navigate('/'); handleCloseMenu(); }}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#FFFFFF',
+                fontFamily: 'Nothing, Arial, sans-serif',
+                fontSize: '2.5rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                textAlign: 'left',
+                letterSpacing: '2px',
+                transition: 'color 0.3s ease'
+              }}
+              onMouseOver={(e) => e.target.style.color = '#FF0000'}
+              onMouseOut={(e) => e.target.style.color = '#FFFFFF'}
+              data-testid="menu-cmf-btn"
+            >
+              CMF
+            </button>
+          </div>
+        </div>
+
+        {/* Right Section - Product Categories */}
+        <div style={{ flex: '2', display: 'flex', gap: '6rem' }}>
+          
+          {/* Phone Category */}
+          <div style={{ flex: '1' }}>
+            <h2 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              fontSize: '1.8rem',
+              fontWeight: 'bold',
+              color: '#FFFFFF',
+              marginBottom: '2rem',
+              letterSpacing: '1px'
+            }}>
+              PHONE
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {[
+                'NOTHING PHONE (3)',
+                'NOTHING PHONE 3A PRO',
+                'NOTHING PHONE 3A',
+                'NOTHING PHONE 2A PLUS',
+                'NOTHING PHONE 2A'
+              ].map((phone, index) => (
+                <button 
+                  key={index}
+                  onClick={() => { navigate('/shop'); handleCloseMenu(); }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: '#FFFFFF',
+                    fontFamily: 'Nothing, Arial, sans-serif',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    letterSpacing: '0.5px',
+                    transition: 'color 0.3s ease',
+                    opacity: 0.8
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.color = '#FF0000';
+                    e.target.style.opacity = '1';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.color = '#FFFFFF';
+                    e.target.style.opacity = '0.8';
+                  }}
+                  data-testid={`phone-${index}`}
+                >
+                  {phone}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Audio Category */}
+          <div style={{ flex: '1' }}>
+            <h2 style={{
+              fontFamily: 'Nothing, Arial, sans-serif',
+              fontSize: '1.8rem',
+              fontWeight: 'bold',
+              color: '#FFFFFF',
+              marginBottom: '2rem',
+              letterSpacing: '1px'
+            }}>
+              AUDIO
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {[
+                'NOTHING HEADPHONE 1',
+                'NOTHING EAR',
+                'CMF BUDS PRO 2',
+                'CMF BUDS 2 PLUS',
+                'NOTHING EAR OPEN'
+              ].map((audio, index) => (
+                <button 
+                  key={index}
+                  onClick={() => { navigate('/shop'); handleCloseMenu(); }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: '#FFFFFF',
+                    fontFamily: 'Nothing, Arial, sans-serif',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    letterSpacing: '0.5px',
+                    transition: 'color 0.3s ease',
+                    opacity: 0.8
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.color = '#FF0000';
+                    e.target.style.opacity = '1';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.color = '#FFFFFF';
+                    e.target.style.opacity = '0.8';
+                  }}
+                  data-testid={`audio-${index}`}
+                >
+                  {audio}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Background NOTHING Text */}
+      <div 
+        style={{
+          position: 'absolute',
+          bottom: '2rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontSize: '8rem',
+          fontFamily: 'Nothing, Arial, sans-serif',
+          fontWeight: 'bold',
+          color: '#FF0000',
+          letterSpacing: '1rem',
+          opacity: isMenuExpanded ? 0.2 : 0,
+          transition: 'opacity 0.8s ease 0.6s',
+          pointerEvents: 'none',
+          zIndex: -1
+        }}
+      >
+        NOTHING
+      </div>
+    </div>
+    )}
+    </>
   );
 };
 
